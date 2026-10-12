@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import KakaoChannelButton from "@/components/KakaoChannelButton";
 import "./globals.css";
 
 const siteUrl = "https://itda-edu.vercel.app";
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="ko" className="scroll-smooth">
       <body className="min-h-screen bg-[#F8FAFC] font-sans text-slate-900 antialiased">
         {children}
+        <KakaoChannelButton />
       </body>
     </html>
   );
