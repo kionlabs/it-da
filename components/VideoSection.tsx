@@ -39,7 +39,7 @@ export default function VideoSection() {
             <span>PREMIUM REVIEWS</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-slate-900 leading-tight break-keep">
-            영상으로 만나는 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">예스지구 리얼 성장 스토리</span>
+            영상으로 만나는 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">리얼 성장 스토리</span>
           </h2>
           <p className="mt-4 text-slate-600 text-sm sm:text-base break-keep font-medium">
             단순한 과외를 넘어, 아이의 진짜 변화를 이끌어낸 생생한 후기와 코칭 노하우를 확인하세요.

@@ -14,7 +14,7 @@ const heroCards = [
   {
     badge: 'METHOD',
     badgeStyle: 'bg-purple-100 text-purple-700 border-purple-200',
-    title: '검증된 명문대 코치진',
+    title: '검증된 전문 선생님',
     description: '철저한 역량 검증과 인성 인터뷰를 통과한 멘토들이 자기주도학습 습관을 확실하게 잡아줍니다.',
   },
   {
@@ -53,14 +53,15 @@ export default function HeroSection() {
 
         {/* Main Title */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight tracking-tight break-keep max-w-4xl mx-auto">
-          내 아이에게 딱 맞는 <span className="text-amber-400">명문대 코치 매칭</span>과<br className="hidden sm:inline" />
+          내 아이에게 딱 맞는 <span className="text-amber-400">전문 선생님과 매칭</span> 후<br className="hidden sm:inline" />
           실패 없는 맞춤형 학습의 시작
         </h1>
 
         {/* Subtext */}
-        <p className="mt-5 max-w-2xl mx-auto text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed font-medium break-keep">
-          1:1 맞춤형 밀착 코칭으로 자기주도학습 습관을 기르고, 스스로 공부할 수 있는 단단한 기초를 만듭니다.
-        </p>
+        <div className="mt-5 max-w-4xl mx-auto space-y-1.5 text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed font-medium break-keep">
+          <p>학교별 출제 경향 분석부터 성적 향상까지, 우리 아이를 위한 완벽한 1:1 맞춤 과외</p>
+          <p>남들과 똑같은 공부는 그만! 다닌 학교의 출제 경향과 아이의 실력을 입체적으로 분석해 꼭 필요한 공부만 짚어줍니다.</p>
+        </div>
 
         {/* CTA Button */}
         <div className="mt-8 flex justify-center">
@@ -108,7 +109,7 @@ export default function HeroSection() {
               </h3>
 
               {/* Card Description */}
-              <p className="text-slate-600 text-sm leading-relaxed break-keep font-medium">
+              <p className="text-slate-600 text-lg leading-relaxed break-keep font-medium">
                 {card.description}
               </p>
             </div>

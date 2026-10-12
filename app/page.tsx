@@ -1,7 +1,9 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ValueProposition from '@/components/ValueProposition';
+import CoreProcessSection from '@/components/CoreProcessSection';
 import TeacherShowcase from '@/components/TeacherShowcase';
+import SuccessStoriesSection from '@/components/SuccessStoriesSection';
 import VideoSection from '@/components/VideoSection';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
@@ -13,7 +15,9 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <ValueProposition />
+        <CoreProcessSection />
         <TeacherShowcase />
+        <SuccessStoriesSection />
         <VideoSection />
         <LeadForm />
       </main>

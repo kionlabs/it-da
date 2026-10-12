@@ -102,10 +102,10 @@ export default function LeadForm() {
             <span>Free Consultation</span>
           </div>
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl break-keep">
-            1:1 무료 코치 매칭 신청
+            우리 아이를 위한 맞춤형 과외, 지금 상담받아보세요.
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base break-keep font-medium">
-            정보를 입력해주시면 AI 정밀 분석 후 담당 매칭 매니저가 24시간 이내에 연락드립니다.
+          <p className="mt-3 mx-auto max-w-3xl text-slate-600 text-sm sm:text-base leading-relaxed break-keep font-medium">
+            학교별 맞춤 커리큘럼과 상세한 수업 방식이 궁금하시다면 언제든 편하게 문의해 주세요. 아이의 현재 상황에 맞는 최적의 길을 안내해 드립니다.
           </p>
         </div>
 
