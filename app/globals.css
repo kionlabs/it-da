@@ -23,3 +23,39 @@
 .text-gradient-purple-indigo {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600;
 }
+
+@keyframes success-story-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 0.75rem));
+  }
+}
+
+.success-story-marquee {
+  animation: success-story-scroll 55s linear infinite;
+  will-change: transform;
+}
+
+.success-story-marquee:hover,
+.success-story-marquee:focus-within {
+  animation-play-state: paused;
+}
+
+.success-story-viewport {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .success-story-viewport {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .success-story-marquee {
+    animation: none;
+  }
+}
