@@ -46,7 +46,7 @@ const processSteps = [
 
 export default function CoreProcessSection() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 sm:py-24 md:py-32">
+    <section id="online-tutoring" className="relative scroll-mt-16 overflow-hidden bg-white py-20 sm:py-24 md:py-32">
       <div
         aria-hidden="true"
         className="absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-purple-100/60 blur-3xl"

@@ -2,7 +2,17 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Sparkles, ChevronRight, Menu, X, MapPin, Globe } from 'lucide-react';
+import {
+  BadgeDollarSign,
+  ChevronRight,
+  CircleHelp,
+  Globe,
+  Handshake,
+  Laptop,
+  Menu,
+  Sparkles,
+  X,
+} from 'lucide-react';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,8 +29,11 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { name: '지역별 센터', href: '/#centers', icon: MapPin },
+    { name: '온라인 과외', href: '/#online-tutoring', icon: Laptop },
+    { name: '제휴학원', href: '/#partner-academies', icon: Handshake },
     { name: '언어 프로그램', href: '/language-programs', icon: Globe },
+    { name: 'QnA', href: '/#qna', icon: CircleHelp },
+    { name: '수업료 안내', href: '/#pricing', icon: BadgeDollarSign },
   ];
 
   return (
@@ -45,13 +58,13 @@ export default function Navbar() {
         </Link>
 
         {/* Right: Desktop Navigation & CTA Button */}
-        <div className="hidden md:flex items-center gap-6">
-          <nav className="flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-3 xl:gap-5">
+          <nav className="flex items-center gap-3 xl:gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-slate-600 hover:text-purple-600 font-medium text-sm transition-colors"
+                className="whitespace-nowrap text-xs font-medium text-slate-600 transition-colors hover:text-purple-600 xl:text-sm"
               >
                 {link.name}
               </Link>
@@ -61,7 +74,7 @@ export default function Navbar() {
           <a
             href="#lead-form"
             onClick={scrollToForm}
-            className="group relative inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-purple-500/20 transition-all hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+            className="group relative inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-md shadow-purple-500/20 transition-all hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 xl:px-4 xl:text-sm"
           >
             <span>무료 상담 신청</span>
             <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 text-white/90" />
@@ -69,13 +82,13 @@ export default function Navbar() {
         </div>
 
         {/* Mobile: Hamburger Button & CTA */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <a
             href="#lead-form"
             onClick={scrollToForm}
             className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm"
           >
-            <span>상담 신청</span>
+            <span>무료 상담</span>
             <ChevronRight className="h-3.5 w-3.5" />
           </a>
           <button
@@ -95,7 +108,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md px-4 pt-3 pb-5 shadow-lg animate-in slide-in-from-top-2 duration-200">
+        <div className="lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md px-4 pt-3 pb-5 shadow-lg animate-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col space-y-3">
             {navLinks.map((link) => {
               const Icon = link.icon;
