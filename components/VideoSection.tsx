@@ -38,10 +38,11 @@ export default function VideoSection() {
           <div className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-purple-700 mb-4 shadow-sm">
             <span>PREMIUM REVIEWS</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-slate-900 leading-tight break-keep">
-            영상으로 만나는 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">리얼 성장 스토리</span>
+          <h2 className="text-balance text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-slate-900 leading-tight break-keep">
+            <span className="inline-block">영상으로 만나는</span>{' '}
+            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">리얼 성장 스토리</span>
           </h2>
-          <p className="mt-4 text-slate-600 text-sm sm:text-base break-keep font-medium">
+          <p className="mt-4 text-pretty text-slate-600 text-sm sm:text-base break-keep font-medium">
             단순한 과외를 넘어, 아이의 진짜 변화를 이끌어낸 생생한 후기와 코칭 노하우를 확인하세요.
           </p>
         </div>
@@ -109,7 +110,7 @@ export default function VideoSection() {
                 {/* Card Text Footer */}
                 <div className="mt-4 px-1 pb-1 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-base sm:text-lg font-extrabold text-slate-900 group-hover:text-purple-700 transition-colors line-clamp-1">
+                    <h3 className="text-balance text-base sm:text-lg font-extrabold text-slate-900 group-hover:text-purple-700 transition-colors line-clamp-1">
                       {video.title}
                     </h3>
                     <p className="mt-1 text-xs sm:text-sm text-slate-600 font-medium flex items-center gap-1.5">

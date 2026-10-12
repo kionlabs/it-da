@@ -57,10 +57,11 @@ export default function CoreProcessSection() {
           <div className="mb-4 inline-flex items-center rounded-full border border-purple-200 bg-purple-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-purple-700 shadow-sm">
             CORE PROCESS
           </div>
-          <h2 className="text-3xl font-black leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl break-keep">
-            핵심 프로세스: <span className="text-purple-700">4단계 맞춤 학습 시스템</span>
+          <h2 className="text-balance text-3xl font-black leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl break-keep">
+            <span className="inline-block">핵심 프로세스:</span>{' '}
+            <span className="inline-block text-purple-700">4단계 맞춤 학습 시스템</span>
           </h2>
-          <p className="mt-5 text-lg font-semibold leading-relaxed text-slate-600 sm:text-xl break-keep">
+          <p className="mt-5 text-balance text-lg font-semibold leading-relaxed text-slate-600 sm:text-xl break-keep">
             체계적인 4단계 프로세스로 실력의 차이를 만듭니다.
           </p>
         </div>
@@ -89,7 +90,7 @@ export default function CoreProcessSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-transparent" />
                 </div>
 
-                <div className={imageOnRight ? 'lg:order-1' : ''}>
+                <div className={`min-w-0 ${imageOnRight ? 'lg:order-1' : ''}`}>
                   <div className="mb-5 flex items-center gap-4">
                     <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-purple-700 text-lg font-black text-white shadow-lg shadow-purple-700/20">
                       {index + 1}
@@ -99,7 +100,7 @@ export default function CoreProcessSection() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-black leading-snug tracking-tight text-slate-900 sm:text-3xl break-keep">
+                  <h3 className="text-balance text-2xl font-black leading-snug tracking-tight text-slate-900 sm:text-3xl break-keep">
                     {item.title}
                   </h3>
 
@@ -107,7 +108,7 @@ export default function CoreProcessSection() {
                     {item.points.map((point) => (
                       <li
                         key={point}
-                        className="flex items-start gap-3 text-base font-medium leading-relaxed text-slate-700 sm:text-lg break-keep"
+                        className="flex items-start gap-3 text-pretty text-base font-medium leading-relaxed text-slate-700 sm:text-lg break-keep"
                       >
                         <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-purple-600" />
                         <span>{point}</span>

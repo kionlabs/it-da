@@ -101,10 +101,11 @@ export default function LeadForm() {
           <div className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-purple-700 mb-4 shadow-sm">
             <span>Free Consultation</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl break-keep">
-            우리 아이를 위한 맞춤형 과외, 지금 상담받아보세요.
+          <h2 className="text-balance text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl break-keep">
+            <span className="sm:inline-block">우리 아이를 위한 맞춤형 과외,</span>{' '}
+            <span className="sm:inline-block">지금 상담받아보세요.</span>
           </h2>
-          <p className="mt-3 mx-auto max-w-3xl text-slate-600 text-sm sm:text-base leading-relaxed break-keep font-medium">
+          <p className="mt-3 mx-auto max-w-3xl text-pretty text-slate-600 text-sm sm:text-base leading-relaxed break-keep font-medium">
             학교별 맞춤 커리큘럼과 상세한 수업 방식이 궁금하시다면 언제든 편하게 문의해 주세요. 아이의 현재 상황에 맞는 최적의 길을 안내해 드립니다.
           </p>
         </div>

@@ -13,10 +13,12 @@ export default function ValueProposition() {
           <div className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-purple-700 mb-4 shadow-sm">
             <span>SCHOOL-SPECIFIC TUTORING</span>
           </div>
-          <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl md:text-5xl leading-tight break-keep">
-            왜 <span className="text-purple-700">&apos;학교별 맞춤 과외&apos;</span>여야 할까요?
+          <h2 className="text-balance text-3xl font-black tracking-tight text-slate-900 sm:text-4xl md:text-5xl leading-tight break-keep">
+            <span className="inline-block">왜</span>{' '}
+            <span className="inline-block text-purple-700">&apos;학교별 맞춤 과외&apos;</span>
+            <span className="inline-block">여야 할까요?</span>
           </h2>
-          <p className="mt-6 text-lg sm:text-xl md:text-2xl text-slate-700 font-bold leading-relaxed break-keep">
+          <p className="mt-6 text-balance text-lg sm:text-xl md:text-2xl text-slate-700 font-bold leading-relaxed break-keep">
             &ldquo;학교마다 출제 경향이 다르고, 아이마다 이해하는 속도가 다릅니다.&rdquo;
           </p>
         </div>
@@ -42,11 +44,11 @@ export default function ValueProposition() {
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-100 text-purple-700">
                 <CheckCircle2 className="h-6 w-6" />
               </div>
-              <p className="mt-6 text-base sm:text-lg leading-loose text-slate-700 font-medium break-keep">
+              <p className="mt-6 text-pretty text-base sm:text-lg leading-loose text-slate-700 font-medium break-keep">
                 똑같은 교과서를 쓰더라도 학교마다 출제 선생님의 성향, 서술형 비중, 고난도 문항의 출제 방식은 천차만별입니다. 우리 아이가 다니는 학교의 시험 특징을 모른 채 공부하는 것은 방향을 잃은 것과 같습니다.
               </p>
               <div className="mt-8 rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50 p-5 sm:p-6">
-                <p className="text-lg sm:text-xl font-extrabold leading-relaxed text-slate-900 break-keep">
+                <p className="text-pretty text-lg sm:text-xl font-extrabold leading-relaxed text-slate-900 break-keep">
                   초등부터 고등까지, 학교별 기출 분석을 바탕으로 한 1:1 맞춤 솔루션으로 성적의 체질을 바꿉니다.
                 </p>
               </div>

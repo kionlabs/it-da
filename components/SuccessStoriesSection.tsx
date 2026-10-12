@@ -106,8 +106,9 @@ export default function SuccessStoriesSection() {
             <Youtube className="h-3.5 w-3.5" />
             <span>SUCCESS STORIES</span>
           </div>
-          <h2 className="text-3xl font-black leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl break-keep">
-            결과로 증명하는 <span className="text-purple-700">성공후기</span>
+          <h2 className="text-balance text-3xl font-black leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl break-keep">
+            <span className="inline-block">결과로 증명하는</span>{' '}
+            <span className="inline-block text-purple-700">성공후기</span>
           </h2>
         </div>
 

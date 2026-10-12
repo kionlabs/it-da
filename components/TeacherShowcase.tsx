@@ -60,14 +60,14 @@ export default function TeacherShowcase() {
           </div>
 
           {/* Right Column: Copy & Checklist Points */}
-          <div className="text-left">
+          <div className="min-w-0 text-left">
             {/* Subtitle Badge */}
             <div className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-purple-700 mb-4 shadow-sm">
               <span>GRADE-SPECIFIC STRATEGY</span>
             </div>
 
             {/* Main Title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-slate-900 leading-tight break-keep">
+            <h2 className="text-balance text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-slate-900 leading-tight break-keep">
               <span className="inline-block">대상별</span>{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 inline-block">
                 맞춤 지도 전략
@@ -75,7 +75,7 @@ export default function TeacherShowcase() {
             </h2>
 
             {/* Subtext */}
-            <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed font-medium break-keep">
+            <p className="mt-4 text-pretty text-slate-600 text-sm sm:text-base leading-relaxed font-medium break-keep">
               학년별 특성에 맞춘 전략적 학습 가이드
             </p>
 
@@ -92,10 +92,10 @@ export default function TeacherShowcase() {
                       <Icon className="h-5 w-5" />
                     </div>
                     <div className="min-w-0">
-                      <h3 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-1.5">
+                      <h3 className="text-balance text-sm sm:text-base font-bold text-slate-900 flex items-center gap-1.5">
                         {item.title}
                       </h3>
-                      <ul className="mt-1.5 space-y-1 text-xs sm:text-sm text-slate-600 font-medium break-keep">
+                      <ul className="mt-1.5 space-y-1 text-pretty text-xs sm:text-sm text-slate-600 font-medium break-keep">
                         {item.points.map((point) => (
                           <li key={point} className="flex items-start gap-2 leading-relaxed">
                             <span className="mt-[0.65em] h-1 w-1 shrink-0 rounded-full bg-purple-500" />

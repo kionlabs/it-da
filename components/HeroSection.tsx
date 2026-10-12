@@ -52,13 +52,15 @@ export default function HeroSection() {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight tracking-tight break-keep max-w-4xl mx-auto">
-          내 아이에게 딱 맞는 <span className="text-amber-400">전문 선생님과 매칭</span> 후<br className="hidden sm:inline" />
-          실패 없는 맞춤형 학습의 시작
+        <h1 className="mx-auto max-w-5xl text-balance text-3xl font-black leading-tight tracking-tight text-white break-keep sm:text-4xl md:text-[2.75rem] xl:text-5xl">
+          <span className="inline-block">내 아이에게 딱 맞는</span>{' '}
+          <span className="inline-block text-amber-400">전문 선생님과 매칭 후</span>
+          <br className="hidden sm:block" />
+          <span className="inline-block">실패 없는 맞춤형 학습의 시작</span>
         </h1>
 
         {/* Subtext */}
-        <div className="mt-5 max-w-4xl mx-auto space-y-1.5 text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed font-medium break-keep">
+        <div className="mt-5 max-w-4xl mx-auto space-y-1.5 text-pretty text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed font-medium break-keep">
           <p>학교별 출제 경향 분석부터 성적 향상까지, 우리 아이를 위한 완벽한 1:1 맞춤 과외</p>
           <p>남들과 똑같은 공부는 그만! 다닌 학교의 출제 경향과 아이의 실력을 입체적으로 분석해 꼭 필요한 공부만 짚어줍니다.</p>
         </div>
@@ -104,12 +106,12 @@ export default function HeroSection() {
               </span>
 
               {/* Card Title */}
-              <h3 className="text-xl font-black text-slate-900 mb-2 group-hover:text-purple-700 transition-colors">
+              <h3 className="text-balance text-xl font-black text-slate-900 mb-2 group-hover:text-purple-700 transition-colors">
                 {card.title}
               </h3>
 
               {/* Card Description */}
-              <p className="text-slate-600 text-lg leading-relaxed break-keep font-medium">
+              <p className="text-pretty text-slate-600 text-lg leading-relaxed break-keep font-medium">
                 {card.description}
               </p>
             </div>
