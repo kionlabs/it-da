@@ -125,7 +125,7 @@ export default function LanguageProgramsPage() {
                   
                   <Image
                     src="/images/language-hero.jpg"
-                    alt="예스지구 언어 프로그램"
+                    alt="잇다과외 1:1 맞춤 언어 프로그램"
                     width={600}
                     height={450}
                     className="w-full h-auto rounded-3xl shadow-2xl shadow-purple-950/15 object-cover border border-purple-100"
@@ -174,7 +174,7 @@ export default function LanguageProgramsPage() {
                 <span>WHY YES LANGUAGE</span>
               </div>
               <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl break-keep">
-                예스지구 언어 프로그램만의 3가지 강점
+                잇다과외 언어 프로그램만의 3가지 강점
               </h2>
               <p className="mt-3 text-slate-600 text-sm sm:text-base break-keep font-medium">
                 막힘없는 실전 회화부터 철저한 내신 및 공인 어학시험 대비까지 완벽한 솔루션을 제공합니다.

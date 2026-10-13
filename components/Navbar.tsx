@@ -46,13 +46,10 @@ export default function Navbar() {
           </div>
           <div className="text-xl font-black tracking-tight flex items-center">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
-              잇다
+              잇다과외
             </span>
             <span className="text-purple-600 font-bold text-sm tracking-normal mx-0.5">
               (It-da)
-            </span>
-            <span className="text-slate-900">
-              과외
             </span>
           </div>
         </Link>

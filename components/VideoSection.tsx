@@ -18,7 +18,7 @@ const videoList = [
     youtubeId: 'Tbl5XkprBf0',
     badge: '성공 후기',
     title: '[합격회원인터뷰] 성적 향상 및 대학 합격 사례',
-    caption: '예스지구와 함께 성적 반등에 성공한 학생들의 이야기',
+    caption: '잇다과외와 함께 성적 반등에 성공한 학생들의 이야기',
     thumbnail: 'https://img.youtube.com/vi/Tbl5XkprBf0/hqdefault.jpg',
   },
 ];

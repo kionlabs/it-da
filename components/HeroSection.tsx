@@ -48,7 +48,7 @@ export default function HeroSection() {
         {/* Top Tagline Badge */}
         <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-white/10 px-4 py-1.5 text-xs font-bold tracking-wider uppercase text-amber-300 backdrop-blur-md shadow-sm mb-6">
           <Sparkles className="h-4 w-4 text-amber-400" />
-          <span>PREMIUM COACHING | YESJIGU</span>
+          <span>잇다과외 | 학교별 1:1 맞춤 과외</span>
         </div>
 
         {/* Main Title */}
@@ -82,7 +82,7 @@ export default function HeroSection() {
           <div className="relative overflow-hidden rounded-t-3xl shadow-2xl">
             <Image
               src="/images/hero-up-banner.jpg"
-              alt="성적 UP 예스지구 코칭 비포 & 애프터 비주얼"
+              alt="성적 향상을 돕는 잇다과외 맞춤 학습"
               width={1024}
               height={512}
               priority
