@@ -48,7 +48,7 @@ export default function HeroSection() {
         {/* Top Tagline Badge */}
         <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-white/10 px-4 py-1.5 text-xs font-bold tracking-wider uppercase text-amber-300 backdrop-blur-md shadow-sm mb-6">
           <Sparkles className="h-4 w-4 text-amber-400" />
-          <span>잇다과외 | 학교별 1:1 맞춤 과외</span>
+          <span>잇다과외 | 온라인 1:1 맞춤 과외</span>
         </div>
 
         {/* Main Title */}

@@ -7,7 +7,7 @@ const siteUrl = "https://itda-edu.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "잇다과외 | 학교별 1:1 맞춤 과외",
+    default: "잇다과외 | 온라인 1:1 맞춤 과외",
     template: "%s | 잇다과외",
   },
   description: "잇다과외는 학교별 출제 경향과 학생의 실력을 분석해 꼭 필요한 공부를 설계하는 초·중·고 1:1 맞춤 과외 서비스입니다.",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: siteUrl,
     siteName: "잇다과외",
-    title: "잇다과외 | 학교별 1:1 맞춤 과외",
+    title: "잇다과외 | 온라인 1:1 맞춤 과외",
     description: "학교별 출제 경향과 학생의 실력을 분석해 꼭 필요한 공부를 설계하는 초·중·고 1:1 맞춤 과외 서비스입니다.",
   },
   robots: {
