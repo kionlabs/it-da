@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   authors: [{ name: "잇다과외" }],
   creator: "잇다과외",
   publisher: "잇다과외",
-  keywords: ["잇다과외", "잇다 과외", "It-da 과외", "온라인 1:1 맞춤 과외", "학교별 내신 과외", "초등 과외", "중등 과외", "고등 과외", "화상 과외", "학습 코칭"],
+  keywords: ["잇다과외", "온라인 1:1 맞춤 과외"],
   alternates: {
     canonical: "/",
   },
