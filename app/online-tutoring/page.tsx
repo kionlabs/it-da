@@ -124,7 +124,7 @@ export default function OnlineTutoringPage() {
             <div className="relative mx-auto w-full max-w-xl">
               <div className="absolute -inset-4 rotate-2 rounded-[2.5rem] bg-gradient-to-br from-purple-500/25 to-blue-500/20" />
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] border-8 border-white/70 shadow-2xl">
-                <Image src="/images/teacher-coaching.jpg" alt="전문 선생님과 학생이 함께하는 잇다과외 1:1 맞춤 수업" fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+                <Image src="/images/online.png" alt="노트북 화상 연결로 전문 선생님과 수업하는 잇다과외 온라인 1:1 맞춤 과외" fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent" />
                 <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/25 bg-slate-950/75 p-4 text-white backdrop-blur-md sm:inset-x-7 sm:bottom-7 sm:p-5">
                   <p className="text-xs font-bold tracking-widest text-cyan-300">LIVE COACHING</p>
