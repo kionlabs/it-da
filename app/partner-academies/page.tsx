@@ -22,6 +22,7 @@ import {
 import Navbar from '@/components/Navbar';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 const siteUrl = 'https://itda-edu.vercel.app';
 
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
   title: '제휴학원 맞춤 학습 시스템',
   description:
     '잇다과외 제휴학원은 지역 학교의 출제 경향과 학생의 수준을 함께 분석해 내신 대비, 학습 플래닝, 오답 관리까지 연결하는 맞춤 학습 시스템을 제공합니다.',
+  keywords: ['잇다과외 제휴학원', '학교별 내신 학원', '자기주도학습', '맞춤 학습 코칭', '초중고 내신 관리'],
   alternates: { canonical: '/partner-academies' },
   openGraph: {
     type: 'website',
@@ -37,6 +39,7 @@ export const metadata: Metadata = {
     siteName: '잇다과외',
     title: '제휴학원 맞춤 학습 시스템 | 잇다과외',
     description: '지역 학교를 잘 아는 학원과 잇다과외의 정밀한 학습 코칭이 만납니다.',
+    images: [`${siteUrl}/images/brand_intro_coach.png`],
   },
 };
 
@@ -132,6 +135,7 @@ export default function PartnerAcademiesPage() {
   return (
     <div className="min-h-screen bg-white text-slate-950 selection:bg-purple-600 selection:text-white">
       <Navbar />
+      <BreadcrumbJsonLd name="제휴학원 맞춤 학습" path="/partner-academies" />
 
       <main>
         <section className="relative overflow-hidden bg-[#f4f1ff] px-4 pb-20 pt-14 sm:px-6 md:pb-28 md:pt-24 lg:px-8">

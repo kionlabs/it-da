@@ -12,6 +12,7 @@ import {
 import Navbar from '@/components/Navbar';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 const siteUrl = 'https://itda-edu.vercel.app';
 
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
   title: '수업료 안내 & 자주 묻는 질문',
   description:
     '잇다과외 초등·중등·고등 수업료와 무료 체험수업, 선생님 배정, 학교별 내신 대비, 수업 횟수 등 자주 묻는 질문을 확인하세요.',
+  keywords: ['잇다과외 수업료', '과외 비용', '무료 체험수업', '과외 선생님 매칭', '1:1 과외 FAQ'],
   alternates: { canonical: '/pricing-faq' },
   openGraph: {
     type: 'website',
@@ -27,6 +29,7 @@ export const metadata: Metadata = {
     siteName: '잇다과외',
     title: '수업료 안내 & 자주 묻는 질문 | 잇다과외',
     description: '학년별 수업료와 잇다과외 이용 전 궁금한 내용을 한눈에 확인하세요.',
+    images: [`${siteUrl}/images/hero-up-banner.jpg`],
   },
 };
 
@@ -86,9 +89,27 @@ const faqs = [
 ];
 
 export default function PricingFaqPage() {
+  const faqStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-950 selection:bg-purple-600 selection:text-white">
       <Navbar />
+      <BreadcrumbJsonLd name="수업료 안내와 자주 묻는 질문" path="/pricing-faq" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData).replace(/</g, '\\u003c') }}
+      />
 
       <main>
         <section className="relative overflow-hidden bg-gradient-to-br from-[#f5f1ff] via-white to-[#eaf3ff] px-4 py-20 sm:px-6 md:py-28 lg:px-8">

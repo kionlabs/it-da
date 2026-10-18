@@ -23,6 +23,7 @@ import {
 import Navbar from '@/components/Navbar';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 const siteUrl = 'https://itda-edu.vercel.app';
 
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
   title: '온라인 1:1 맞춤 과외',
   description:
     '잇다과외 온라인 1:1 맞춤 과외는 정밀 진단, 전문 선생님 매칭, 학교별 맞춤 수업, 오답 분석과 학습 플래닝을 한 번에 제공합니다.',
+  keywords: ['잇다과외 온라인 과외', '온라인 1:1 과외', '화상 과외', '초중고 온라인 과외', '학교별 내신 과외'],
   alternates: { canonical: '/online-tutoring' },
   openGraph: {
     type: 'website',
@@ -38,6 +40,7 @@ export const metadata: Metadata = {
     siteName: '잇다과외',
     title: '온라인 1:1 맞춤 과외 | 잇다과외',
     description: '장소의 제약 없이 전문 선생님과 연결되는 진단 기반 온라인 1:1 맞춤 과외 서비스입니다.',
+    images: [`${siteUrl}/images/online.png`],
   },
 };
 
@@ -84,6 +87,7 @@ export default function OnlineTutoringPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-purple-600 selection:text-white">
       <Navbar />
+      <BreadcrumbJsonLd name="온라인 1:1 맞춤 과외" path="/online-tutoring" />
 
       <main>
         <section className="relative overflow-hidden bg-[#dcecff] px-4 pb-20 pt-16 sm:px-6 md:pb-28 md:pt-24 lg:px-8">

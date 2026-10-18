@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   authors: [{ name: "잇다과외" }],
   creator: "잇다과외",
   publisher: "잇다과외",
-  keywords: ["잇다과외", "잇다 과외", "It-da 과외", "학교별 맞춤 과외", "온라인 과외", "1:1 과외", "내신 과외", "학습 코칭"],
+  keywords: ["잇다과외", "잇다 과외", "It-da 과외", "온라인 1:1 맞춤 과외", "학교별 내신 과외", "초등 과외", "중등 과외", "고등 과외", "화상 과외", "학습 코칭"],
   alternates: {
     canonical: "/",
   },
@@ -29,6 +29,20 @@ export const metadata: Metadata = {
     siteName: "잇다과외",
     title: "잇다과외 | 온라인 1:1 맞춤 과외",
     description: "학교별 출제 경향과 학생의 실력을 분석해 꼭 필요한 공부를 설계하는 초·중·고 1:1 맞춤 과외 서비스입니다.",
+    images: [
+      {
+        url: `${siteUrl}/images/hero-up-banner.jpg`,
+        width: 1024,
+        height: 512,
+        alt: "잇다과외 온라인 1:1 맞춤 과외",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "잇다과외 | 온라인 1:1 맞춤 과외",
+    description: "학교별 출제 경향과 학생의 실력을 분석해 꼭 필요한 공부를 설계하는 초·중·고 1:1 맞춤 과외 서비스입니다.",
+    images: [`${siteUrl}/images/hero-up-banner.jpg`],
   },
   robots: {
     index: true,
