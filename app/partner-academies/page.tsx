@@ -167,19 +167,20 @@ export default function PartnerAcademiesPage() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-2xl pb-8 sm:px-6">
-              <div className="relative ml-auto aspect-[5/4] w-[92%] overflow-hidden rounded-[2rem_5rem_2rem_5rem] border-[10px] border-white shadow-2xl sm:w-[86%]">
-                <Image src="/images/study-env.jpg" alt="선생님과 학생이 함께 공부하는 제휴학원 맞춤 학습 환경" fill priority sizes="(min-width: 1024px) 48vw, 92vw" className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
-                <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/25 bg-slate-950/75 p-4 text-white backdrop-blur sm:inset-x-7 sm:bottom-7 sm:p-5">
-                  <p className="text-xs font-black tracking-[0.16em] text-violet-300">LOCAL × PERSONAL</p>
-                  <p className="mt-1 text-lg font-black sm:text-xl">학교는 가까이, 관리는 더 깊이</p>
-                </div>
+            <div className="relative mx-auto w-full max-w-2xl sm:px-6">
+              <div className="relative ml-auto aspect-[5/4] w-full overflow-hidden rounded-[2rem_5rem_2rem_5rem] border-[10px] border-white shadow-2xl">
+                <Image src="/images/brand_intro_coach.png" alt="선생님과 학생들이 함께 소통하며 공부하는 제휴학원 코칭 환경" fill priority sizes="(min-width: 1024px) 48vw, 92vw" className="object-cover object-center" />
               </div>
-              <div className="absolute bottom-0 left-0 rounded-3xl bg-purple-700 p-5 text-white shadow-xl sm:p-6">
-                <MapPin className="h-7 w-7 text-violet-200" />
-                <p className="mt-3 text-sm font-bold text-violet-100">지역 밀착 학습</p>
-                <p className="mt-1 text-xl font-black">우리 학교 맞춤</p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-[0.82fr_1.18fr]">
+                <div className="rounded-2xl bg-purple-700 p-5 text-white shadow-lg">
+                  <MapPin className="h-6 w-6 text-violet-200" />
+                  <p className="mt-3 text-xs font-bold text-violet-100">지역 밀착 학습</p>
+                  <p className="mt-1 text-lg font-black">우리 학교 맞춤</p>
+                </div>
+                <div className="flex flex-col justify-center rounded-2xl bg-slate-950 p-5 text-white shadow-lg">
+                  <p className="text-xs font-black tracking-[0.16em] text-violet-300">LOCAL × PERSONAL</p>
+                  <p className="mt-2 text-lg font-black leading-snug">학교는 가까이, 관리는 더 깊이</p>
+                </div>
               </div>
             </div>
           </div>
