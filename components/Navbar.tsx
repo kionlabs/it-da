@@ -30,7 +30,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: '온라인 과외', href: '/online-tutoring', icon: Laptop },
-    { name: '제휴학원', href: '/#partner-academies', icon: Handshake },
+    { name: '제휴학원', href: '/partner-academies', icon: Handshake },
     { name: '언어 프로그램', href: '/language-programs', icon: Globe },
     { name: 'QnA', href: '/#qna', icon: CircleHelp },
     { name: '수업료 안내', href: '/#pricing', icon: BadgeDollarSign },
