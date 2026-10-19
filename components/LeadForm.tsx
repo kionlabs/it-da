@@ -1,14 +1,34 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CheckCircle2, Send, Loader2, User, Phone, GraduationCap, MessageSquare, AlertCircle, Sparkles } from 'lucide-react';
+import {
+  AlertCircle,
+  BookOpen,
+  CheckCircle2,
+  GraduationCap,
+  Loader2,
+  MapPin,
+  MessageSquare,
+  Phone,
+  School,
+  Send,
+  ShieldCheck,
+  Sparkles,
+  User,
+} from 'lucide-react';
 
 interface FormData {
   name: string;
   phone: string;
   grade: string;
+  subjects: string[];
+  address: string;
+  school: string;
   concern: string;
+  privacyConsent: boolean;
 }
+
+const subjectOptions = ['국어', '영어', '수학', '사회', '과학', '역사', '논술', '코딩', '전과목'];
 
 const quickTags = [
   '성적이 정체되어 있어요',
@@ -22,7 +42,11 @@ export default function LeadForm() {
     name: '',
     phone: '',
     grade: '중등',
+    subjects: [],
+    address: '',
+    school: '',
     concern: '',
+    privacyConsent: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -50,16 +74,43 @@ export default function LeadForm() {
     if (errorMessage) setErrorMessage(null);
   };
 
+  const handleSubjectClick = (subject: string) => {
+    setFormData((prev) => {
+      if (subject === '전과목') {
+        return { ...prev, subjects: prev.subjects.includes('전과목') ? [] : ['전과목'] };
+      }
+
+      const subjectsWithoutAll = prev.subjects.filter((item) => item !== '전과목');
+      const subjects = subjectsWithoutAll.includes(subject)
+        ? subjectsWithoutAll.filter((item) => item !== subject)
+        : [...subjectsWithoutAll, subject];
+      return { ...prev, subjects };
+    });
+    if (errorMessage) setErrorMessage(null);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Basic Validation
     if (!formData.name.trim()) {
-      setErrorMessage('성함을 입력해 주세요.');
+      setErrorMessage('이름을 입력해 주세요.');
       return;
     }
     if (!formData.phone.trim()) {
       setErrorMessage('연락처를 입력해 주세요.');
+      return;
+    }
+    if (formData.subjects.length === 0) {
+      setErrorMessage('희망 과목을 한 개 이상 선택해 주세요.');
+      return;
+    }
+    if (!formData.address.trim()) {
+      setErrorMessage('주소를 시·도와 동까지만 입력해 주세요.');
+      return;
+    }
+    if (!formData.privacyConsent) {
+      setErrorMessage('개인정보 수집·이용에 동의해 주세요.');
       return;
     }
 
@@ -140,10 +191,10 @@ export default function LeadForm() {
                 </div>
               )}
 
-              {/* 1. 성함 */}
+              {/* 1. 이름 */}
               <div>
                 <label htmlFor="name" className="block text-sm font-bold text-slate-800 mb-2">
-                  학부모 / 학생 성함 <span className="text-purple-600">*</span>
+                  이름 <span className="text-purple-600">*</span>
                 </label>
                 <div className="relative">
                   <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-purple-500">
@@ -157,6 +208,8 @@ export default function LeadForm() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="홍길동"
+                    maxLength={40}
+                    autoComplete="name"
                     className="w-full rounded-xl border border-slate-300 bg-slate-50 pl-10 pr-4 py-3 text-sm text-slate-900 placeholder-slate-400 transition focus:bg-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
                   />
                 </div>
@@ -179,15 +232,17 @@ export default function LeadForm() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="010-1234-5678"
+                    inputMode="tel"
+                    autoComplete="tel"
                     className="w-full rounded-xl border border-slate-300 bg-slate-50 pl-10 pr-4 py-3 text-sm text-slate-900 placeholder-slate-400 transition focus:bg-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
                   />
                 </div>
               </div>
 
-              {/* 3. 학년 선택 */}
+              {/* 3. 학년 */}
               <div>
                 <label htmlFor="grade" className="block text-sm font-bold text-slate-800 mb-2">
-                  학년 선택 <span className="text-purple-600">*</span>
+                  학년 <span className="text-purple-600">*</span>
                 </label>
                 <div className="relative">
                   <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-purple-500">
@@ -203,12 +258,89 @@ export default function LeadForm() {
                     <option value="초등">초등학생 (4~6학년)</option>
                     <option value="중등">중학생 (1~3학년)</option>
                     <option value="고등">고등학생 (1~3학년)</option>
-                    <option value="기타/재수">기타 / N수생 / 재수생</option>
+                    <option value="기타/N수생/성인">기타 / N수생 / 성인</option>
                   </select>
                 </div>
               </div>
 
-              {/* 4. 가장 시급한 고민 (Textarea & Quick Tags) */}
+              {/* 4. 희망 과목 */}
+              <fieldset>
+                <legend className="mb-2 flex items-center gap-2 text-sm font-bold text-slate-800">
+                  <BookOpen className="h-4 w-4 text-purple-500" />
+                  희망 과목 <span className="text-purple-600">*</span>
+                  <span className="text-xs font-normal text-slate-500">(다중 선택)</span>
+                </legend>
+                <div className="grid grid-cols-3 gap-2 sm:grid-cols-5" aria-label="희망 과목 선택">
+                  {subjectOptions.map((subject) => {
+                    const isSelected = formData.subjects.includes(subject);
+                    return (
+                      <button
+                        key={subject}
+                        type="button"
+                        aria-pressed={isSelected}
+                        onClick={() => handleSubjectClick(subject)}
+                        className={`rounded-xl border px-2 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-1 ${
+                          isSelected
+                            ? 'border-purple-600 bg-purple-600 text-white shadow-sm'
+                            : 'border-slate-300 bg-slate-50 text-slate-700 hover:border-purple-300 hover:bg-purple-50'
+                        }`}
+                      >
+                        {subject}
+                      </button>
+                    );
+                  })}
+                </div>
+              </fieldset>
+
+              {/* 5. 주소 */}
+              <div>
+                <label htmlFor="address" className="block text-sm font-bold text-slate-800 mb-2">
+                  주소 <span className="text-purple-600">*</span>
+                  <span className="ml-1 text-xs font-normal text-slate-500">(시·도, 동까지만 입력)</span>
+                </label>
+                <div className="relative">
+                  <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-purple-500">
+                    <MapPin className="h-4 w-4" />
+                  </div>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    required
+                    value={formData.address}
+                    onChange={handleChange}
+                    placeholder="예: 서울특별시 강남구 대치동"
+                    maxLength={100}
+                    autoComplete="address-level2"
+                    className="w-full rounded-xl border border-slate-300 bg-slate-50 pl-10 pr-4 py-3 text-sm text-slate-900 placeholder-slate-400 transition focus:bg-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  />
+                </div>
+              </div>
+
+              {/* 6. 학교 */}
+              <div>
+                <label htmlFor="school" className="block text-sm font-bold text-slate-800 mb-2">
+                  학교 <span className="text-xs font-normal text-slate-500">(선택)</span>
+                </label>
+                <div className="relative">
+                  <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-purple-500">
+                    <School className="h-4 w-4" />
+                  </div>
+                  <input
+                    type="text"
+                    id="school"
+                    name="school"
+                    value={formData.school}
+                    onChange={handleChange}
+                    placeholder="재학 중인 학교명을 입력해 주세요."
+                    maxLength={100}
+                    autoComplete="organization"
+                    className="w-full rounded-xl border border-slate-300 bg-slate-50 pl-10 pr-4 py-3 text-sm text-slate-900 placeholder-slate-400 transition focus:bg-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  />
+                </div>
+              </div>
+
+              {/* 7. 가장 시급한 고민 (Textarea & Quick Tags) */}
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <label htmlFor="concern" className="block text-sm font-bold text-slate-800">
@@ -252,10 +384,35 @@ export default function LeadForm() {
                     value={formData.concern}
                     onChange={handleChange}
                     placeholder="예: 수학 성적이 오르지 않고 자기주도 학습 습관이 잡히지 않아요."
+                    maxLength={1000}
                     className="w-full rounded-xl border border-slate-300 bg-slate-50 pl-10 pr-4 py-3 text-sm text-slate-900 placeholder-slate-400 transition focus:bg-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
                   />
                 </div>
               </div>
+
+              {/* 8. 개인정보 수집·이용 동의 */}
+              <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-purple-200 hover:bg-purple-50/40">
+                <input
+                  type="checkbox"
+                  name="privacyConsent"
+                  checked={formData.privacyConsent}
+                  onChange={(event) => {
+                    setFormData((prev) => ({ ...prev, privacyConsent: event.target.checked }));
+                    if (errorMessage) setErrorMessage(null);
+                  }}
+                  required
+                  className="mt-0.5 h-4 w-4 rounded border-slate-300 text-purple-600 focus:ring-purple-500"
+                />
+                <span className="min-w-0">
+                  <span className="flex items-center gap-1.5 text-sm font-bold text-slate-800">
+                    <ShieldCheck className="h-4 w-4 text-purple-600" />
+                    개인정보 수집·이용 동의 <span className="text-purple-600">*</span>
+                  </span>
+                  <span className="mt-1 block text-xs leading-relaxed text-slate-500 break-keep">
+                    상담 안내를 위해 이름, 연락처, 학년, 희망 과목, 주소 및 선택 입력 정보를 수집·이용하는 데 동의합니다.
+                  </span>
+                </span>
+              </label>
 
               {/* Submit Button */}
               <button
