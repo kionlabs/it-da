@@ -69,6 +69,25 @@ create policy "public_can_submit_valid_consultation"
     and char_length(btrim(address)) between 2 and 100
   );
 
-alter role authenticator
-  set pgrst.db_schemas = 'public, storage, graphql_public, itda';
+do $$
+declare
+  existing_schemas text;
+begin
+  select substring(config_entry from length('pgrst.db_schemas=') + 1)
+    into existing_schemas
+  from pg_roles
+  cross join lateral unnest(rolconfig) as config_entry
+  where rolname = 'authenticator'
+    and config_entry like 'pgrst.db_schemas=%'
+  limit 1;
+
+  existing_schemas := coalesce(existing_schemas, 'public, storage, graphql_public');
+  if not ('itda' = any(regexp_split_to_array(replace(existing_schemas, ' ', ''), ','))) then
+    execute format(
+      'alter role authenticator set pgrst.db_schemas = %L',
+      existing_schemas || ', itda'
+    );
+  end if;
+end
+$$;
 notify pgrst, 'reload config';
