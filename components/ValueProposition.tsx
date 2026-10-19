@@ -6,7 +6,7 @@ import { CheckCircle2, Sparkles } from 'lucide-react';
 
 export default function ValueProposition() {
   return (
-    <section className="relative pt-36 md:pt-48 pb-16 md:pb-24 bg-[#F8FAFC] border-b border-slate-200/80">
+    <section className="relative py-20 md:py-28 bg-[#F8FAFC] border-b border-slate-200/80">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-12">
