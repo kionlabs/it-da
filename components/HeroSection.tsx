@@ -39,8 +39,14 @@ export default function HeroSection() {
           </h1>
 
           <div className="home-hero-copy mt-6 max-w-xl space-y-2 text-pretty text-base font-medium leading-7 text-slate-700 break-keep sm:text-lg sm:leading-8">
-            <p>학교별 출제 경향 분석부터 성적 향상까지, 우리 아이를 위한 완벽한 1:1 맞춤 과외</p>
-            <p>아이의 학교와 실력을 입체적으로 분석해 지금 꼭 필요한 공부만 정확하게 짚어드립니다.</p>
+            <p>
+              <span className="block">학교별 출제 경향 분석부터 성적 향상까지,</span>
+              <span className="block">우리 아이를 위한 완벽한 1:1 맞춤 과외</span>
+            </p>
+            <p>
+              <span className="block">아이의 학교와 실력을 입체적으로 분석해</span>
+              <span className="block">지금 꼭 필요한 공부만 정확하게 짚어드립니다.</span>
+            </p>
           </div>
 
           <div className="home-hero-actions mt-8 flex flex-col gap-3 sm:flex-row">

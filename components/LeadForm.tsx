@@ -428,7 +428,7 @@ export default function LeadForm() {
                 ) : (
                   <>
                     <Send className="h-5 w-5 text-white" />
-                    <span>지금 무료 상담 신청하기</span>
+                    <span>지금 무료 시범수업 신청하기</span>
                   </>
                 )}
               </button>
