@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: '잇다과외',
     title: '잇다과외 | 온라인 1:1 맞춤 과외',
     description: '학교별 출제 경향과 학생의 실력을 분석해 전문 선생님과 연결하는 초·중·고 1:1 맞춤 과외 서비스입니다.',
-    images: [`${siteUrl}/images/hero-semester-desktop.png`],
+    images: [`${siteUrl}/images/hero-study-background.png`],
   },
 };
 
@@ -45,7 +45,7 @@ const structuredData = {
       alternateName: '잇다(It-da)과외',
       url: siteUrl,
       logo: `${siteUrl}/favicon.ico`,
-      image: `${siteUrl}/images/hero-semester-desktop.png`,
+      image: `${siteUrl}/images/hero-study-background.png`,
       description: '학교별 출제 경향과 학생의 실력을 분석해 전문 선생님과 연결하는 초·중·고 1:1 맞춤 과외 서비스',
       sameAs: ['https://pf.kakao.com/_xaeWxkn'],
       areaServed: 'KR',
