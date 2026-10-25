@@ -9,7 +9,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 lg:bottom-6 lg:left-[8%] lg:right-[45%] lg:flex lg:justify-start">
         <div className="relative h-full w-full lg:aspect-[2/3] lg:w-auto lg:max-w-full lg:flex-none">
           <Image
-            src="/images/hero-study-background.png"
+            src="/images/hero-student.png"
             alt=""
             fill
             priority
