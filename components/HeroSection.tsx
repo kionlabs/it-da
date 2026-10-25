@@ -31,23 +31,21 @@ export default function HeroSection() {
             IT-DA PERSONAL TUTORING
           </div>
 
-          <h1 className="home-hero-title mt-6 text-[2.1rem] font-black leading-[1.14] tracking-tight text-slate-950 break-keep sm:text-5xl lg:text-[3.25rem] xl:text-6xl">
-            <span className="block">내 아이에게 딱 맞는</span>
-            <span className="block text-purple-700">전문 선생님과 매칭 후</span>
-            <span className="block">실패 없는 맞춤형</span>
-            <span className="block">학습의 시작</span>
+          <h1 className="home-hero-title mt-6 max-w-2xl text-[clamp(1.45rem,7vw,2.25rem)] font-black leading-[1.14] tracking-tight text-slate-950 break-keep sm:text-[clamp(2.25rem,5vw,3rem)] lg:text-[clamp(2rem,3.2vw,2.75rem)]">
+            학교별 출제 경향 분석부터<br />
+            성적 향상까지,<br className="lg:hidden" />{' '}
+            우리 아이를 위한<br className="hidden lg:inline" />{' '}
+            완벽한<br className="lg:hidden" />{' '}
+            <span className="text-purple-700">1:1 맞춤 과외</span>
           </h1>
 
-          <div className="home-hero-copy mt-6 max-w-xl space-y-2 text-pretty text-base font-medium leading-7 text-slate-700 break-keep sm:text-lg sm:leading-8">
-            <p>
-              <span className="block">학교별 출제 경향 분석부터 성적 향상까지,</span>
-              <span className="block">우리 아이를 위한 완벽한 1:1 맞춤 과외</span>
-            </p>
-            <p>
-              <span className="block">아이의 학교와 실력을 입체적으로 분석해</span>
-              <span className="block">지금 꼭 필요한 공부만 정확하게 짚어드립니다.</span>
-            </p>
-          </div>
+          <p className="home-hero-copy mt-6 max-w-xl text-pretty text-base font-medium leading-7 text-slate-700 break-keep sm:text-lg sm:leading-8">
+            <span className="block font-bold text-slate-800">남들과 똑같은 공부는 그만!</span>
+            <span className="block">
+              다닌 학교의 출제 경향과 아이의 실력을<br className="hidden lg:inline" />{' '}
+              입체적으로 분석해 꼭 필요한 공부만 짚어줍니다.
+            </span>
+          </p>
 
           <div className="home-hero-actions mt-8 flex flex-col gap-3 sm:flex-row">
             <a

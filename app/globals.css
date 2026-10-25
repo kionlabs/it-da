@@ -39,7 +39,7 @@
 
   .home-hero-title {
     margin-top: 1rem;
-    font-size: clamp(2.5rem, 5.8vh, 3.75rem);
+    font-size: clamp(2rem, min(5.8vh, 3.2vw), 2.75rem);
     line-height: 1.08;
   }
 
