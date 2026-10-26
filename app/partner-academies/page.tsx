@@ -142,10 +142,10 @@ export default function PartnerAcademiesPage() {
       <BreadcrumbJsonLd name="제휴학원 맞춤 학습" path="/partner-academies" />
 
       <main>
-        <section className="relative overflow-hidden bg-[#f4f1ff] px-4 pb-20 pt-14 sm:px-6 md:pb-28 md:pt-24 lg:px-8">
+        <section className="relative overflow-hidden bg-[#f4f1ff] px-4 pb-20 pt-14 sm:px-6 md:pb-28 md:pt-24 lg:min-h-[calc(100svh-4rem)] lg:px-8 lg:py-8">
           <div aria-hidden="true" className="absolute -left-28 top-20 h-72 w-72 rounded-full bg-violet-300/35 blur-3xl" />
           <div aria-hidden="true" className="absolute -right-20 -top-16 h-96 w-96 rounded-full bg-sky-200/55 blur-3xl" />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.96fr_1.04fr] lg:gap-16">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:min-h-[calc(100svh-8rem)] lg:grid-cols-[0.96fr_1.04fr] lg:gap-16">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/80 px-4 py-2 text-xs font-black tracking-[0.14em] text-purple-700 shadow-sm backdrop-blur">
                 <Handshake className="h-4 w-4" /> IT-DA PARTNER ACADEMY
@@ -184,7 +184,7 @@ export default function PartnerAcademiesPage() {
                   <p className="mt-3 text-xs font-bold text-violet-100">지역 밀착 학습</p>
                   <p className="mt-1 text-lg font-black">우리 학교 맞춤</p>
                 </div>
-                <div className="flex flex-col justify-center rounded-2xl bg-slate-950 p-5 text-white shadow-lg">
+                <div className="flex flex-col justify-center rounded-2xl bg-slate-950 p-5 text-white shadow-lg xl:pr-28">
                   <p className="text-xs font-black tracking-[0.16em] text-violet-300">LOCAL × PERSONAL</p>
                   <p className="mt-2 text-lg font-black leading-snug">학교는 가까이, 관리는 더 깊이</p>
                 </div>

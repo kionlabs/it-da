@@ -90,15 +90,15 @@ export default function OnlineTutoringPage() {
       <BreadcrumbJsonLd name="온라인 1:1 맞춤 과외" path="/online-tutoring" />
 
       <main>
-        <section className="relative overflow-hidden bg-[#dcecff] px-4 pb-20 pt-16 sm:px-6 md:pb-28 md:pt-24 lg:px-8">
+        <section className="relative overflow-hidden bg-[#dcecff] px-4 pb-20 pt-16 sm:px-6 md:pb-28 md:pt-24 lg:min-h-[calc(100svh-4rem)] lg:px-8 lg:py-8">
           <div aria-hidden="true" className="absolute -left-32 -top-28 h-96 w-96 rounded-full bg-purple-400/35 blur-3xl" />
           <div aria-hidden="true" className="absolute -right-20 top-20 h-80 w-80 rounded-full bg-cyan-300/30 blur-3xl" />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:min-h-[calc(100svh-8rem)] lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-300/70 bg-white/70 px-4 py-2 text-xs font-black tracking-[0.14em] text-blue-700 shadow-sm backdrop-blur">
                 <Laptop2 className="h-4 w-4" /> ONLINE 1:1 TUTORING
               </div>
-              <h1 className="mt-6 text-balance text-4xl font-black leading-[1.16] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl break-keep">
+              <h1 className="mt-6 text-balance text-4xl font-black leading-[1.16] tracking-tight text-slate-950 sm:text-5xl lg:text-[clamp(2.25rem,3.6vw,3.75rem)] break-keep">
                 장소의 한계를 넘어,
                 <br />
                 <span className="text-blue-700">전문 선생님과 만나는</span>
@@ -118,7 +118,7 @@ export default function OnlineTutoringPage() {
               </div>
               <div className="mt-9 grid max-w-xl grid-cols-3 gap-3 text-center">
                 {['실시간 화상 수업', '학교별 맞춤 진도', '수업 후 학습 리포트'].map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/70 bg-white/60 px-3 py-3 text-xs font-bold leading-5 text-slate-700 backdrop-blur sm:text-sm">
+                  <div key={item} className="rounded-2xl border border-white/70 bg-white/60 px-3 py-3 text-xs font-bold leading-5 text-slate-700 backdrop-blur sm:text-sm lg:text-xs xl:text-sm">
                     {item}
                   </div>
                 ))}
