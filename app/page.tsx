@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ValueProposition from '@/components/ValueProposition';
+import TutoringReasonsSection from '@/components/TutoringReasonsSection';
 import CoreProcessSection from '@/components/CoreProcessSection';
 import TeacherShowcase from '@/components/TeacherShowcase';
 import SuccessStoriesSection from '@/components/SuccessStoriesSection';
@@ -84,6 +85,7 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <ValueProposition />
+        <TutoringReasonsSection />
         <CoreProcessSection />
         <TeacherShowcase />
         <SuccessStoriesSection />
