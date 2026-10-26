@@ -94,7 +94,7 @@ export default function OnlineTutoringPage() {
       <BreadcrumbJsonLd name="온라인 1:1 맞춤 과외" path="/online-tutoring" />
 
       <main>
-        <section className="relative overflow-hidden bg-[#dcecff] px-4 pb-20 pt-16 sm:px-6 md:pb-28 md:pt-24 lg:min-h-[calc(100svh-4rem)] lg:px-8 lg:py-8">
+        <section className="relative z-10 overflow-x-clip overflow-y-visible bg-[#dcecff] px-4 pb-20 pt-16 sm:px-6 md:pb-28 md:pt-24 lg:min-h-[calc(100svh-4rem)] lg:px-8 lg:py-8">
           <div aria-hidden="true" className="absolute -left-32 -top-28 h-96 w-96 rounded-full bg-purple-400/35 blur-3xl" />
           <div aria-hidden="true" className="absolute -right-20 top-20 h-80 w-80 rounded-full bg-cyan-300/30 blur-3xl" />
           <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:min-h-[calc(100svh-8rem)] lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">

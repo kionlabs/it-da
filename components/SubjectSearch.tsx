@@ -25,7 +25,7 @@ export default function SubjectSearch() {
   };
 
   return (
-    <div className="relative mt-7 max-w-xl">
+    <div className="relative z-30 mt-7 max-w-xl">
       <label htmlFor="subject-search" className="mb-2 block text-sm font-bold text-slate-800">과목별 1:1 과외 찾기</label>
       <form onSubmit={handleSubmit} role="search" className="flex rounded-2xl border border-blue-200 bg-white p-1.5 shadow-lg shadow-blue-900/10 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200">
         <Search className="ml-3 mt-3 h-5 w-5 shrink-0 text-blue-700" aria-hidden="true" />
