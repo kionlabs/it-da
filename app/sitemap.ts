@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { tutoringSubjects } from '@/lib/tutoringSubjects';
 
 const siteUrl = 'https://itda-edu.vercel.app';
 
@@ -16,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    ...tutoringSubjects.map((subject) => ({
+      url: `${siteUrl}/online-tutoring/subjects/${subject.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
     {
       url: `${siteUrl}/partner-academies`,
       lastModified: new Date(),

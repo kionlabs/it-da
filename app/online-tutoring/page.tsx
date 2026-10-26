@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   ArrowRight,
+  ArrowUpRight,
   BarChart3,
   BookOpenCheck,
   BrainCircuit,
@@ -24,13 +26,15 @@ import Navbar from '@/components/Navbar';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import SubjectSearch from '@/components/SubjectSearch';
+import { tutoringSubjects } from '@/lib/tutoringSubjects';
 
 const siteUrl = 'https://itda-edu.vercel.app';
 
 export const metadata: Metadata = {
   title: '온라인 1:1 맞춤 과외',
   description:
-    '잇다과외 온라인 1:1 맞춤 과외는 정밀 진단, 전문 선생님 매칭, 학교별 맞춤 수업, 오답 분석과 학습 플래닝을 한 번에 제공합니다.',
+    '국어·영어·수학·사회·과학·역사·논술·코딩 중 필요한 과목을 찾아보세요. 잇다과외는 정밀 진단과 학교별 맞춤 수업, 오답 관리로 온라인 1:1 과외를 진행합니다.',
   keywords: ['잇다과외 온라인 과외', '온라인 1:1 과외', '화상 과외', '초중고 온라인 과외', '학교별 내신 과외'],
   alternates: { canonical: '/online-tutoring' },
   openGraph: {
@@ -108,20 +112,14 @@ export default function OnlineTutoringPage() {
               <p className="mt-6 max-w-2xl text-pretty text-base font-medium leading-8 text-slate-700 sm:text-lg break-keep">
                 학교별 출제 경향과 학생의 학습 성향을 함께 분석합니다. 실시간 화상 수업부터 오답 관리, 학습 플래닝까지 한 명의 선생님이 밀착 관리합니다.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <SubjectSearch />
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <a href="#lead-form" className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-blue-800 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300">
                   무료 상담 신청하기 <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href="#online-system" className="inline-flex items-center justify-center rounded-full border border-slate-900/15 bg-white/80 px-7 py-4 text-sm font-extrabold text-slate-800 transition hover:bg-white">
                   수업 시스템 살펴보기
                 </a>
-              </div>
-              <div className="mt-9 grid max-w-xl grid-cols-3 gap-3 text-center">
-                {['실시간 화상 수업', '학교별 맞춤 진도', '수업 후 학습 리포트'].map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/70 bg-white/60 px-3 py-3 text-xs font-bold leading-5 text-slate-700 backdrop-blur sm:text-sm lg:text-xs xl:text-sm">
-                    {item}
-                  </div>
-                ))}
               </div>
             </div>
 
@@ -139,6 +137,30 @@ export default function OnlineTutoringPage() {
                 <p className="text-xs font-bold text-slate-500">수업 준비</p>
                 <p className="mt-1 font-black text-blue-700">진단부터 정밀하게</p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="subject-catalog" className="scroll-mt-20 bg-white px-4 py-20 sm:px-6 md:py-28 lg:px-8" aria-labelledby="subject-catalog-title">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-black tracking-[0.18em] text-blue-700">TUTORING BY SUBJECT</p>
+              <h2 id="subject-catalog-title" className="mt-4 text-balance text-3xl font-black leading-tight text-slate-950 sm:text-5xl break-keep">필요한 과목부터 시작하는<br />온라인 1:1 과외</h2>
+              <p className="mt-5 text-pretty font-medium leading-7 text-slate-600 break-keep">과목마다 막히는 이유가 다릅니다. 아이의 과목을 선택해 학습 방향과 수업 내용을 살펴보세요.</p>
+            </div>
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {tutoringSubjects.map((subject, index) => (
+                <Link key={subject.slug} href={`/online-tutoring/subjects/${subject.slug}`} className="group flex min-h-44 flex-col justify-between rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50 hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-200">
+                  <div className="flex items-start justify-between">
+                    <span className="text-sm font-black text-blue-600">0{index + 1}</span>
+                    <ArrowUpRight className="h-5 w-5 text-blue-700 transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black text-slate-950">{subject.name} 온라인 과외</h3>
+                    <p className="mt-2 text-sm font-medium leading-6 text-slate-600">{subject.tagline}</p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
