@@ -141,14 +141,15 @@ export default function PricingFaqPage() {
                 <h2 className="mt-4 text-balance text-3xl font-black leading-tight sm:text-5xl break-keep">학년별 기본<br />수업료 안내</h2>
               </div>
               <div>
-                <p className="text-pretty font-medium leading-8 text-slate-300 break-keep">학생의 학년과 목표를 기준으로 안내되는 기본 수업료입니다. 과목, 수업 횟수와 방식에 따라 달라질 수 있으며 상담 후 맞춤 커리큘럼과 함께 정확히 안내해 드립니다.</p>
+                <p className="text-pretty font-medium leading-8 text-slate-300 break-keep">아래 금액은 주 2회, 회당 1시간 수업을 기준으로 한 기본 수업료입니다. 과목, 수업 횟수와 방식에 따라 달라질 수 있으며 상담 후 맞춤 커리큘럼과 함께 정확히 안내해 드립니다.</p>
                 <div className="mt-5 flex flex-wrap gap-3 text-xs font-bold text-violet-100">
                   {['맞춤 커리큘럼', '전문 선생님 매칭', '학습 피드백'].map((item) => <span key={item} className="rounded-full border border-white/15 bg-white/5 px-4 py-2">{item}</span>)}
                 </div>
               </div>
             </div>
 
-            <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <p className="mt-12 inline-flex rounded-full border border-violet-300/40 bg-violet-400/15 px-4 py-2 text-sm font-bold text-violet-100">수업료 기준: 주 2회, 1시간</p>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {prices.map(({ grade, price, note }, index) => (
                 <article key={grade} className={`relative overflow-hidden rounded-[2rem] border p-6 sm:p-7 ${index === 3 ? 'border-violet-400 bg-violet-600' : 'border-white/10 bg-white/[0.06]'}`}>
                   <span className="absolute right-5 top-4 text-xs font-black tracking-widest text-white/30">0{index + 1}</span>
