@@ -12,7 +12,6 @@ import {
   HeartHandshake,
   MapPin,
   MessageSquareText,
-  NotebookTabs,
   School,
   SearchCheck,
   Sparkles,
@@ -47,26 +46,38 @@ const strengths = [
   {
     number: '01',
     icon: School,
-    title: '지역 학교 내신 맞춤',
-    text: '학교별 시험 범위와 출제 경향을 반영해 우리 아이에게 필요한 내신 전략을 세웁니다.',
+    title: '학교별 시험 경향 반영',
+    text: '같은 학년, 같은 과목이라도 학교마다 시험 스타일이 다릅니다. 어떤 학교는 교과서 중심으로 출제하고, 어떤 학교는 프린트·부교재·수업 필기에서 많이 출제합니다. 지역 학교를 오래 관리해 온 학원은 이런 차이를 알고 학생이 다니는 학교의 출제 경향에 맞춰 효율적으로 준비합니다.',
   },
   {
     number: '02',
-    icon: NotebookTabs,
-    title: '플래너 기반 습관 관리',
-    text: '하루 학습량과 우선순위를 스스로 정하고 실천하도록 계획부터 점검까지 함께합니다.',
+    icon: ClipboardCheck,
+    title: '학교 수업 자료 기반 대비',
+    text: '내신은 수능형 실력만으로 해결되지 않습니다. 학교 선생님이 강조한 내용과 수행평가 자료, 프린트, 교과서 본문, 부교재, 수업 중 필기가 시험에 직접 반영되는 경우가 많습니다. 학생이 가져오는 학교별 자료를 분석해 시험 범위에서 중요한 부분을 선별하고 집중적으로 다룹니다.',
   },
   {
     number: '03',
-    icon: UsersRound,
-    title: '수준별 개별 진도',
-    text: '학년보다 실제 이해도를 기준으로 교재와 진도를 설계해 부족한 개념부터 채웁니다.',
+    icon: CalendarCheck2,
+    title: '구체적인 시험 직전 대비',
+    text: '시험 기간에 맞춰 학습 계획을 조정합니다. 시험 3~4주 전에는 범위를 정리하고, 2주 전에는 유형별 문제 풀이, 1주 전에는 학교별 예상 문제와 오답 정리, 시험 직전에는 암기 확인과 서술형 대비에 집중합니다.',
   },
   {
     number: '04',
+    icon: Target,
+    title: '학생별 약점 보완',
+    text: '같은 학교 학생이라도 약점은 다릅니다. 어떤 학생은 개념 이해가 부족하고, 어떤 학생은 계산 실수가 많으며, 어떤 학생은 서술형 답안 작성이 약합니다. 학교 시험 범위 안에서 학생별 약점을 점검하고 점수에 직접 영향을 주는 부분부터 보완합니다.',
+  },
+  {
+    number: '05',
     icon: BookOpenCheck,
-    title: '과목별 체계적 관리',
-    text: '개념 이해, 유형 훈련, 오답 복습, 서술형 대비가 하나의 학습 흐름으로 이어집니다.',
+    title: '서술형·수행평가 대비',
+    text: '내신에서 서술형과 수행평가는 점수와 등급 차이를 만드는 중요한 요소입니다. 학교별 서술형 출제 방식과 감점 포인트, 답안 작성 방식까지 지도합니다. 단순히 정답을 맞히는 훈련을 넘어 학교 선생님이 요구하는 표현 방식에 맞춰 답안을 쓰는 연습을 합니다.',
+  },
+  {
+    number: '06',
+    icon: UsersRound,
+    title: '학부모에게 명확한 학습 관리',
+    text: '시험 범위, 학교별 일정, 학생의 준비 상태를 함께 확인합니다. 아이가 어떤 범위를 끝냈고 어떤 단원이 약한지, 시험 전까지 무엇을 보완해야 하는지 알기 쉽게 안내합니다. 이번 시험을 위해 무엇을 준비하고 있는지 분명하게 공유합니다.',
   },
 ];
 
@@ -99,13 +110,6 @@ const coachingSteps = [
     title: '실천 밀착 코칭',
     text: '계획이 행동으로 이어지도록 수업과 자기주도 학습을 관리합니다.',
   },
-];
-
-const examPlan = [
-  ['D-4주', '학교 분석', '시험 범위·교과서·부교재·프린트 자료를 확인하고 출제 포인트를 정리합니다.'],
-  ['D-3주', '개념 완성', '단원별 핵심 개념을 다시 점검하고 빈 개념을 우선 보완합니다.'],
-  ['D-2주', '유형 집중', '자주 나오는 유형과 서술형 문항을 반복해 풀이 과정을 다듬습니다.'],
-  ['D-1주', '실전 점검', '예상 문제와 오답을 압축 복습하며 시험 직전 기억을 정리합니다.'],
 ];
 
 const faqs = [
@@ -146,13 +150,12 @@ export default function PartnerAcademiesPage() {
               <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/80 px-4 py-2 text-xs font-black tracking-[0.14em] text-purple-700 shadow-sm backdrop-blur">
                 <Handshake className="h-4 w-4" /> IT-DA PARTNER ACADEMY
               </div>
-              <h1 className="mt-6 text-balance text-4xl font-black leading-[1.14] tracking-tight sm:text-5xl lg:text-6xl break-keep">
-                지역 학교를 잘 아는 학원에
-                <br />
-                <span className="text-purple-700">1:1 맞춤 코칭</span>을 더합니다.
+              <h1 className="mt-6 max-w-2xl text-balance text-3xl font-black leading-[1.18] tracking-tight sm:text-5xl lg:text-[3.5rem] break-keep">
+                지역 내 <span className="whitespace-nowrap text-purple-700">학교 내신</span>
+                <br className="hidden sm:block" /> 맞춤형 준비
               </h1>
               <p className="mt-6 max-w-2xl text-pretty text-base font-medium leading-8 text-slate-700 sm:text-lg break-keep">
-                학교별 시험 정보와 학생의 실제 학습 수준을 함께 봅니다. 내신 대비부터 플래너, 오답, 학부모 피드백까지 가까운 곳에서 촘촘하게 이어지는 학습 시스템입니다.
+                지역 내 학교 내신 맞춤형 학원의 강점은 ‘일반적인 공부’가 아니라 ‘우리 학교 시험에 맞는 공부’를 시킨다는 점입니다.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a href="#lead-form" className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-purple-800 focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300">
@@ -208,17 +211,17 @@ export default function PartnerAcademiesPage() {
         <section id="academy-system" className="scroll-mt-20 bg-white px-4 py-20 sm:px-6 md:py-28 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-black tracking-[0.18em] text-purple-700">FOUR LEARNING SYSTEMS</p>
-              <h2 className="mt-4 text-balance text-3xl font-black leading-tight sm:text-5xl break-keep">가까운 학원에 더해지는<br />4가지 맞춤 학습 시스템</h2>
-              <p className="mt-5 text-pretty font-medium leading-7 text-slate-600 break-keep">수업 한 번이 아니라 계획하고, 배우고, 복습하고, 점검하는 전체 과정을 관리합니다.</p>
+              <p className="text-sm font-black tracking-[0.18em] text-purple-700">SIX SCHOOL-FOCUSED STRENGTHS</p>
+              <h2 className="mt-4 text-balance text-3xl font-black leading-tight sm:text-5xl break-keep">우리 학교 시험에 맞춰 준비하는<br />제휴학원의 6가지 강점</h2>
+              <p className="mt-5 text-pretty font-medium leading-7 text-slate-600 break-keep">학교별 자료 분석부터 시험 직전 점검과 학부모 피드백까지, 내신 준비의 흐름을 이어갑니다.</p>
             </div>
             <div className="mt-14 grid gap-5 md:grid-cols-2">
               {strengths.map(({ number, icon: Icon, title, text }, index) => (
-                <article key={title} className={`group relative overflow-hidden rounded-[2rem] border p-7 transition hover:-translate-y-1 hover:shadow-xl sm:p-9 ${index === 0 || index === 3 ? 'border-purple-200 bg-purple-50' : 'border-slate-200 bg-slate-50'}`}>
+                <article key={title} className={`group relative overflow-hidden rounded-[2rem] border p-7 transition hover:-translate-y-1 hover:shadow-xl sm:p-9 ${index % 3 === 0 ? 'border-purple-200 bg-purple-50' : 'border-slate-200 bg-slate-50'}`}>
                   <span className="absolute -right-2 -top-6 text-8xl font-black text-slate-900/[0.05]">{number}</span>
                   <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-purple-700 shadow-sm"><Icon className="h-6 w-6" /></span>
                   <h3 className="mt-7 text-2xl font-black">{title}</h3>
-                  <p className="mt-3 max-w-md font-medium leading-7 text-slate-600">{text}</p>
+                  <p className="mt-3 max-w-xl text-pretty font-medium leading-8 text-slate-600 break-keep">{text}</p>
                 </article>
               ))}
             </div>
@@ -269,28 +272,6 @@ export default function PartnerAcademiesPage() {
                   <p className="mt-7 text-xs font-black tracking-[0.16em] text-purple-600">{label}</p>
                   <h3 className="mt-2 flex items-center gap-2 text-xl font-black"><Icon className="h-5 w-5 text-purple-700" />{title}</h3>
                   <p className="mt-3 text-sm font-medium leading-6 text-slate-600">{text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-slate-950 px-4 py-20 text-white sm:px-6 md:py-28 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
-              <div>
-                <CalendarCheck2 className="h-10 w-10 text-violet-300" />
-                <p className="mt-6 text-sm font-black tracking-[0.18em] text-violet-300">SCHOOL EXAM PLAN</p>
-                <h2 className="mt-4 text-balance text-3xl font-black leading-tight sm:text-5xl break-keep">시험 4주 전부터<br />순서가 다른 내신 대비</h2>
-              </div>
-              <p className="text-pretty font-medium leading-8 text-slate-300 break-keep">무작정 많은 문제를 풀기보다 학교 자료와 학생의 약점을 기준으로 매주 해야 할 일을 분명하게 나눕니다.</p>
-            </div>
-            <div className="mt-14 grid gap-px overflow-hidden rounded-[2rem] bg-white/10 lg:grid-cols-4">
-              {examPlan.map(([week, title, text]) => (
-                <article key={week} className="bg-slate-900 p-7 sm:p-8">
-                  <p className="text-3xl font-black text-violet-300">{week}</p>
-                  <h3 className="mt-8 text-xl font-black">{title}</h3>
-                  <p className="mt-3 text-sm font-medium leading-6 text-slate-400">{text}</p>
                 </article>
               ))}
             </div>
