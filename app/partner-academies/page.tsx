@@ -11,7 +11,6 @@ import {
   GraduationCap,
   Handshake,
   HeartHandshake,
-  MapPin,
   MessageSquareText,
   School,
   SearchCheck,
@@ -146,11 +145,9 @@ export default function PartnerAcademiesPage() {
       <BreadcrumbJsonLd name="제휴학원 맞춤 학습" path="/partner-academies" />
 
       <main>
-        <section className="relative z-10 overflow-x-clip overflow-y-visible bg-[#f4f1ff] px-4 pb-20 pt-14 sm:px-6 md:pb-28 md:pt-24 lg:min-h-[calc(100svh-4rem)] lg:px-8 lg:py-8">
-          <div aria-hidden="true" className="absolute -left-28 top-20 h-72 w-72 rounded-full bg-violet-300/35 blur-3xl" />
-          <div aria-hidden="true" className="absolute -right-20 -top-16 h-96 w-96 rounded-full bg-sky-200/55 blur-3xl" />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:min-h-[calc(100svh-8rem)] lg:grid-cols-[0.96fr_1.04fr] lg:gap-16">
-            <div>
+        <section className="relative isolate z-10 overflow-x-clip overflow-y-visible bg-[#f8f1e9] px-4 py-14 sm:px-6 md:py-20 lg:min-h-[700px] lg:px-8 lg:py-12">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:min-h-[604px] lg:grid-cols-[0.98fr_1.02fr] lg:gap-6">
+            <div className="relative z-10">
               <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/80 px-4 py-2 text-xs font-black tracking-[0.14em] text-purple-700 shadow-sm backdrop-blur">
                 <Handshake className="h-4 w-4" /> IT-DA PARTNER ACADEMY
               </div>
@@ -179,21 +176,10 @@ export default function PartnerAcademiesPage() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-2xl sm:px-6">
-              <div className="relative ml-auto aspect-[5/4] w-full overflow-hidden rounded-[2rem_5rem_2rem_5rem] border-[10px] border-white shadow-2xl">
-                <Image src="/images/brand_intro_coach.png" alt="선생님과 학생들이 함께 소통하며 공부하는 제휴학원 코칭 환경" fill priority sizes="(min-width: 1024px) 48vw, 92vw" className="object-cover object-center" />
-              </div>
-              <div className="mt-4 grid gap-3 sm:grid-cols-[0.82fr_1.18fr]">
-                <div className="rounded-2xl bg-purple-700 p-5 text-white shadow-lg">
-                  <MapPin className="h-6 w-6 text-violet-200" />
-                  <p className="mt-3 text-xs font-bold text-violet-100">지역 밀착 학습</p>
-                  <p className="mt-1 text-lg font-black">우리 학교 맞춤</p>
-                </div>
-                <div className="flex flex-col justify-center rounded-2xl bg-slate-950 p-5 text-white shadow-lg xl:pr-28">
-                  <p className="text-xs font-black tracking-[0.16em] text-violet-300">LOCAL × PERSONAL</p>
-                  <p className="mt-2 text-lg font-black leading-snug">학교는 가까이, 관리는 더 깊이</p>
-                </div>
-              </div>
+            <div className="relative mx-auto aspect-square w-full max-w-[640px]">
+              <Image src="/images/brand_intro_coach.png" alt="선생님과 학생들이 함께 소통하며 공부하는 제휴학원 코칭 환경" fill priority sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 92vw" className="object-contain" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#f8f1e9_0%,transparent_16%,transparent_83%,#f8f1e9_100%)]" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#f8f1e9_0%,transparent_16%,transparent_82%,#f8f1e9_100%)]" />
             </div>
           </div>
         </section>
