@@ -5,7 +5,7 @@ const strengths = ['학교별 기출 분석', '1:1 정밀 진단', '맞춤 커�
 
 export default function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#f8f1e9] lg:min-h-[calc(100svh-4rem)]">
+    <section className="relative isolate overflow-hidden bg-[#F5F1EE] lg:min-h-[calc(100svh-4rem)]">
       <div className="absolute inset-0 hidden lg:bottom-6 lg:left-[8%] lg:right-[45%] lg:flex lg:justify-start">
         <div className="relative h-full w-full lg:aspect-[2/3] lg:w-auto lg:max-w-full lg:flex-none">
           <Image
@@ -21,7 +21,7 @@ export default function HeroSection() {
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 hidden lg:block lg:bg-[linear-gradient(270deg,#f8f1e9_0%,#f8f1e9_35%,rgba(248,241,233,0.88)_48%,rgba(248,241,233,0.1)_70%,rgba(248,241,233,0)_100%)]"
+        className="absolute inset-0 hidden lg:block lg:bg-[linear-gradient(270deg,#F5F1EE_0%,#F5F1EE_35%,rgba(245,241,238,0.88)_48%,rgba(245,241,238,0.1)_70%,rgba(245,241,238,0)_100%)]"
       />
 
       <div className="home-hero-inner relative mx-auto flex max-w-7xl items-start px-4 pb-0 pt-10 sm:px-6 sm:pt-14 lg:min-h-[calc(100svh-4rem)] lg:items-center lg:justify-end lg:px-8 lg:py-20">
@@ -50,7 +50,7 @@ export default function HeroSection() {
           <div className="home-hero-actions mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="#lead-form"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-purple-800 focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#58626C] px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#414B55] focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300"
             >
               무료 시범수업 신청
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

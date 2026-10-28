@@ -1,5 +1,20 @@
 import type { Config } from "tailwindcss";
 
+// Winter palette: slate, greige, peach beige, and ivory.
+const winter = {
+  50: '#F5F1EE',
+  100: '#EEE7E2',
+  200: '#DAC8BE',
+  300: '#C7B5AC',
+  400: '#A6A9AA',
+  500: '#78848A',
+  600: '#58626C',
+  700: '#414B55',
+  800: '#333E47',
+  900: '#27323B',
+  950: '#1B252D',
+};
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,6 +24,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        purple: winter,
+        violet: winter,
+        indigo: winter,
+        blue: { ...winter, 50: '#F4F6F7', 100: '#E9EDF0', 200: '#D7DFE3' },
         periwinkle: {
           mint: '#ADEEE2',
           purple: '#A260EE',

@@ -12,7 +12,6 @@ import {
   Award, 
   ChevronRight, 
   CheckCircle2, 
-  Sparkles,
   BookOpen,
   Headphones,
   GraduationCap
@@ -65,86 +64,38 @@ export default function LanguageProgramsPage() {
 
       <main className="flex-1">
         {/* 2. Hero Section */}
-        <section className="relative overflow-hidden pt-12 pb-16 md:py-20 px-4 sm:px-6 lg:px-8">
-          {/* Subtle Background Glows */}
-          <div className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-purple-200/40 via-indigo-100/30 to-blue-100/20 blur-3xl" />
-
-          <div className="mx-auto max-w-6xl">
-            <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
-              {/* Left Column (7 cols): Hero Copy & CTA */}
-              <div className="md:col-span-7 space-y-6 text-left">
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 rounded-full bg-purple-50 border border-purple-200 px-4 py-1.5 text-xs font-bold text-purple-700 uppercase tracking-wider shadow-sm">
-                  <Globe className="h-3.5 w-3.5 text-purple-600" />
-                  <span>GLOBAL LANGUAGE PROGRAM</span>
-                </div>
-
-                {/* Main Title */}
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.25] break-keep">
-                  글로벌 소통의 시작,<br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
-                    차별화된 맞춤 언어 프로그램
+        <section className="relative isolate overflow-hidden bg-[#E9EDF0] px-4 pt-14 sm:px-6 sm:pt-20 lg:min-h-[640px] lg:px-8 lg:py-12">
+          <div className="absolute inset-0 hidden lg:block">
+            <Image src="/images/language-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover object-center" />
+            <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(90deg,#E9EDF0_0%,#E9EDF0_29%,rgba(233,237,240,0.96)_43%,rgba(233,237,240,0.5)_61%,transparent_79%)]" />
+            <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(0deg,#E9EDF0_0%,transparent_17%,transparent_88%,#E9EDF0_100%)]" />
+          </div>
+          <div className="relative mx-auto flex max-w-7xl lg:min-h-[544px] lg:items-center">
+            <div className="max-w-2xl lg:w-[55%]">
+              <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/80 px-4 py-2 text-xs font-black tracking-[0.14em] text-purple-700 shadow-sm backdrop-blur">
+                <Globe className="h-4 w-4" /> GLOBAL LANGUAGE PROGRAM
+              </div>
+              <h1 className="mt-6 text-balance text-3xl font-black leading-[1.16] tracking-tight text-slate-950 break-keep sm:text-5xl lg:text-[clamp(2.5rem,3.3vw,3.4rem)]">
+                글로벌 소통의 시작,<br />
+                <span className="text-purple-700">차별화된 맞춤 언어 프로그램</span>
+              </h1>
+              <p className="mt-6 max-w-xl text-pretty text-base font-medium leading-8 text-slate-700 break-keep sm:text-lg">
+                단순히 단어를 외우는 어학이 아닙니다. 실용 회화부터 공인 시험, 비즈니스 언어까지 아이의 목표에 맞춘 1:1 맞춤 언어 코칭을 경험하세요.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {['원어민·전문 코치 1:1 밀착 지도', '목적별 맞춤 커리큘럼 설계'].map((item) => (
+                  <span key={item} className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/80 px-4 py-2 text-xs font-bold text-slate-700 shadow-sm sm:text-sm">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-purple-600" />{item}
                   </span>
-                </h1>
-
-                {/* Subtext */}
-                <p className="text-base sm:text-lg text-slate-600 leading-relaxed break-keep font-medium">
-                  단순히 단어를 외우는 어학이 아닙니다. 실용 회화부터 공인 시험, 비즈니스 언어까지 아이의 목표에 맞춘 1:1 맞춤 언어 코칭을 경험하세요.
-                </p>
-
-                {/* Highlights List */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                  <div className="flex items-center gap-2.5 text-sm font-semibold text-slate-700 bg-white/80 border border-slate-200/80 rounded-xl px-3.5 py-2.5 shadow-sm">
-                    <CheckCircle2 className="h-4 w-4 text-purple-600 shrink-0" />
-                    <span>원어민 & 전문 코치 1:1 밀착 지도</span>
-                  </div>
-                  <div className="flex items-center gap-2.5 text-sm font-semibold text-slate-700 bg-white/80 border border-slate-200/80 rounded-xl px-3.5 py-2.5 shadow-sm">
-                    <CheckCircle2 className="h-4 w-4 text-purple-600 shrink-0" />
-                    <span>목적별 맞춤 커리큘럼 설계</span>
-                  </div>
-                </div>
-
-                {/* CTA Button */}
-                <div className="pt-3">
-                  <a
-                    href="#lead-form"
-                    onClick={scrollToForm}
-                    className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 px-7 py-4 text-base font-bold text-white shadow-xl shadow-purple-500/25 hover:shadow-2xl hover:shadow-purple-500/30 hover:opacity-95 transition-all transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-                  >
-                    <span>언어 프로그램 무료 상담 신청</span>
-                    <ChevronRight className="h-5 w-5" />
-                  </a>
-                </div>
+                ))}
               </div>
-
-              {/* Right Column (5 cols): Hero Image */}
-              <div className="md:col-span-5 relative">
-                <div className="relative mx-auto max-w-md md:max-w-none">
-                  {/* Decorative Background Card */}
-                  <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-purple-500/20 to-indigo-500/20 blur-lg -z-10" />
-                  
-                  <Image
-                    src="/images/language-hero.jpg"
-                    alt="잇다과외 1:1 맞춤 언어 프로그램"
-                    width={600}
-                    height={450}
-                    className="w-full h-auto rounded-3xl shadow-2xl shadow-purple-950/15 object-cover border border-purple-100"
-                    priority
-                  />
-
-                  {/* Floating Highlight Badge */}
-                  <div className="absolute -bottom-4 -left-4 sm:left-4 rounded-2xl bg-white/95 backdrop-blur-md p-3.5 shadow-xl border border-purple-100 flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-100 text-purple-600">
-                      <Sparkles className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-slate-900">맞춤 언어 레벨 진단</p>
-                      <p className="text-[11px] text-purple-700 font-semibold">무료 1:1 상담 시 제공</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <a href="#lead-form" onClick={scrollToForm} className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#58626C] px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#414B55] focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300">
+                언어 프로그램 무료 상담 신청 <ChevronRight className="h-5 w-5" />
+              </a>
             </div>
+          </div>
+          <div className="relative mx-auto mt-8 aspect-[16/9] max-w-[700px] overflow-hidden lg:hidden [mask-image:linear-gradient(to_bottom,transparent_0%,#000_15%,#000_83%,transparent_100%)]">
+            <Image src="/images/language-hero.jpg" alt="온라인으로 언어 학습을 하는 학생" fill priority sizes="(min-width: 700px) 700px, 100vw" className="object-cover object-center" />
           </div>
         </section>
 
