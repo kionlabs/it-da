@@ -37,13 +37,13 @@ const quickTags = [
   '1:1 맞춤 관리가 시급해요',
 ];
 
-export default function LeadForm({ initialSubject }: { initialSubject?: string } = {}) {
+export default function LeadForm({ initialSubject, initialAddress }: { initialSubject?: string; initialAddress?: string } = {}) {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: '',
     grade: '중등',
     subjects: initialSubject ? [initialSubject] : [],
-    address: '',
+    address: initialAddress ?? '',
     school: '',
     concern: '',
     privacyConsent: false,

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   ArrowRight,
   BookOpenCheck,
@@ -22,6 +23,8 @@ import Navbar from '@/components/Navbar';
 import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import RegionSearch from '@/components/RegionSearch';
+import { regionTutoringPages } from '@/lib/regionTutoring';
 
 const siteUrl = 'https://itda-edu.vercel.app';
 
@@ -142,7 +145,7 @@ export default function PartnerAcademiesPage() {
       <BreadcrumbJsonLd name="제휴학원 맞춤 학습" path="/partner-academies" />
 
       <main>
-        <section className="relative overflow-hidden bg-[#f4f1ff] px-4 pb-20 pt-14 sm:px-6 md:pb-28 md:pt-24 lg:min-h-[calc(100svh-4rem)] lg:px-8 lg:py-8">
+        <section className="relative z-10 overflow-x-clip overflow-y-visible bg-[#f4f1ff] px-4 pb-20 pt-14 sm:px-6 md:pb-28 md:pt-24 lg:min-h-[calc(100svh-4rem)] lg:px-8 lg:py-8">
           <div aria-hidden="true" className="absolute -left-28 top-20 h-72 w-72 rounded-full bg-violet-300/35 blur-3xl" />
           <div aria-hidden="true" className="absolute -right-20 -top-16 h-96 w-96 rounded-full bg-sky-200/55 blur-3xl" />
           <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:min-h-[calc(100svh-8rem)] lg:grid-cols-[0.96fr_1.04fr] lg:gap-16">
@@ -157,7 +160,8 @@ export default function PartnerAcademiesPage() {
               <p className="mt-6 max-w-2xl text-pretty text-base font-medium leading-8 text-slate-700 sm:text-lg break-keep">
                 지역 내 학교 내신 맞춤형 학원의 강점은 ‘일반적인 공부’가 아니라 ‘우리 학교 시험에 맞는 공부’를 시킨다는 점입니다.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <RegionSearch />
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <a href="#lead-form" className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-purple-800 focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300">
                   제휴학원 상담 신청 <ArrowRight className="h-4 w-4" />
                 </a>
@@ -165,7 +169,7 @@ export default function PartnerAcademiesPage() {
                   학습 시스템 보기
                 </a>
               </div>
-              <div className="mt-9 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap gap-3">
                 {['학교별 내신', '개별 진도', '학습 습관', '밀착 피드백'].map((item) => (
                   <span key={item} className="rounded-full border border-purple-200 bg-white/75 px-4 py-2 text-xs font-bold text-slate-700 shadow-sm">
                     {item}
@@ -189,6 +193,17 @@ export default function PartnerAcademiesPage() {
                   <p className="mt-2 text-lg font-black leading-snug">학교는 가까이, 관리는 더 깊이</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white px-4 py-16 sm:px-6 md:py-20 lg:px-8" aria-labelledby="region-guides-title">
+          <div className="mx-auto max-w-7xl">
+            <p className="text-sm font-black tracking-[0.18em] text-purple-700">LOCAL TUTORING GUIDE</p>
+            <h2 id="region-guides-title" className="mt-4 text-balance text-3xl font-black sm:text-4xl break-keep">지역별 과외 안내</h2>
+            <p className="mt-4 max-w-3xl leading-7 text-slate-600 break-keep">지역과 과목을 함께 살펴보고, 학생의 학교 자료와 현재 실력에 맞는 수업 방향을 확인하세요. 방문 가능한 제휴학원은 상담 과정에서 안내합니다.</p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {regionTutoringPages.map((page) => <Link key={page.slug} href={page.path} className="group flex min-h-44 flex-col justify-between rounded-3xl border border-purple-100 bg-purple-50/60 p-6 transition hover:-translate-y-1 hover:border-purple-300 hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-200"><span className="flex items-center gap-2 text-sm font-bold text-purple-700"><MapPin className="h-4 w-4" aria-hidden="true" />서울 · {page.region}</span><div className="flex items-end justify-between gap-4"><div><h3 className="text-2xl font-black text-slate-950">{page.title}</h3><p className="mt-2 text-sm text-slate-600">학교별 내신 · 개념 진단 · 오답 관리</p></div><ArrowRight className="h-5 w-5 shrink-0 text-purple-700 transition group-hover:translate-x-1" aria-hidden="true" /></div></Link>)}
             </div>
           </div>
         </section>
