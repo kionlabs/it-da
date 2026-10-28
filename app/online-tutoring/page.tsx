@@ -125,7 +125,7 @@ export default function OnlineTutoringPage() {
               </div>
             </div>
           </div>
-          <div className="relative mx-auto mt-10 max-w-[800px] overflow-hidden xl:hidden">
+          <div className="relative mx-auto mt-8 max-w-[700px] overflow-hidden px-3 sm:px-6 xl:hidden [mask-image:linear-gradient(to_bottom,transparent_0%,#000_14%,#000_84%,transparent_100%)]">
             <Image src="/images/online.png" alt="노트북 화상 연결로 전문 선생님과 수업하는 잇다과외 온라인 1:1 맞춤 과외" width={682} height={503} priority sizes="(min-width: 800px) 800px, 100vw" className="block h-auto w-full" />
           </div>
         </section>
