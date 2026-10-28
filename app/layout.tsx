@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: "/favicon.ico",
+    shortcut: `${siteUrl}/favicon.ico`,
   },
   openGraph: {
     type: "website",
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     description: "학교별 출제 경향과 학생의 실력을 분석해 꼭 필요한 공부를 설계하는 초·중·고 1:1 맞춤 과외 서비스입니다.",
     images: [
       {
-        url: `${siteUrl}/images/hero-up-banner.jpg`,
-        width: 1024,
-        height: 512,
-        alt: "잇다과외 온라인 1:1 맞춤 과외",
+        url: `${siteUrl}/images/itda-home-og.png`,
+        width: 1730,
+        height: 909,
+        alt: "잇다과외 학생과 선생님의 1:1 맞춤 학습",
       },
     ],
   },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "잇다과외 | 온라인 1:1 맞춤 과외",
     description: "학교별 출제 경향과 학생의 실력을 분석해 꼭 필요한 공부를 설계하는 초·중·고 1:1 맞춤 과외 서비스입니다.",
-    images: [`${siteUrl}/images/hero-up-banner.jpg`],
+    images: [`${siteUrl}/images/itda-home-og.png`],
   },
   robots: {
     index: true,
