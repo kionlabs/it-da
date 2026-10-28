@@ -5,8 +5,8 @@ const strengths = ['학교별 기출 분석', '1:1 정밀 진단', '맞춤 커�
 
 export default function HeroSection() {
   return (
-    <section className="relative isolate min-h-[780px] overflow-hidden bg-[#f8f1e9] sm:min-h-[820px] lg:min-h-[calc(100svh-4rem)]">
-      <div className="absolute inset-0 lg:bottom-6 lg:left-[8%] lg:right-[45%] lg:flex lg:justify-start">
+    <section className="relative isolate overflow-hidden bg-[#f8f1e9] lg:min-h-[calc(100svh-4rem)]">
+      <div className="absolute inset-0 hidden lg:bottom-6 lg:left-[8%] lg:right-[45%] lg:flex lg:justify-start">
         <div className="relative h-full w-full lg:aspect-[2/3] lg:w-auto lg:max-w-full lg:flex-none">
           <Image
             src="/images/hero-student.png"
@@ -14,17 +14,17 @@ export default function HeroSection() {
             fill
             priority
             sizes="(min-width: 1024px) 55vh, 100vw"
-            className="home-hero-photo object-cover object-[52%_68%] lg:object-contain lg:object-right-bottom"
+            className="home-hero-photo object-contain object-right-bottom"
           />
         </div>
       </div>
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,241,233,0.98)_0%,rgba(248,241,233,0.92)_38%,rgba(248,241,233,0.2)_64%,rgba(248,241,233,0)_100%)] lg:bg-[linear-gradient(270deg,#f8f1e9_0%,#f8f1e9_35%,rgba(248,241,233,0.88)_48%,rgba(248,241,233,0.1)_70%,rgba(248,241,233,0)_100%)]"
+        className="absolute inset-0 hidden lg:block lg:bg-[linear-gradient(270deg,#f8f1e9_0%,#f8f1e9_35%,rgba(248,241,233,0.88)_48%,rgba(248,241,233,0.1)_70%,rgba(248,241,233,0)_100%)]"
       />
 
-      <div className="home-hero-inner relative mx-auto flex min-h-[780px] max-w-7xl items-start px-4 pb-80 pt-12 sm:min-h-[820px] sm:px-6 sm:pb-[28rem] sm:pt-16 lg:min-h-[calc(100svh-4rem)] lg:items-center lg:justify-end lg:px-8 lg:py-20">
+      <div className="home-hero-inner relative mx-auto flex max-w-7xl items-start px-4 pb-0 pt-10 sm:px-6 sm:pt-14 lg:min-h-[calc(100svh-4rem)] lg:items-center lg:justify-end lg:px-8 lg:py-20">
         <div className="max-w-2xl lg:w-[54%]">
           <div className="inline-flex items-center gap-2 rounded-full border border-purple-200/80 bg-white/80 px-4 py-2 text-xs font-black tracking-[0.14em] text-purple-700 shadow-sm backdrop-blur">
             <Sparkles className="h-4 w-4" />
@@ -75,6 +75,18 @@ export default function HeroSection() {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="relative mx-auto mt-8 w-full max-w-lg sm:mt-10 sm:mb-12 lg:hidden">
+        <Image
+          src="/images/hero-student.png"
+          alt="공부하는 학생의 모습"
+          width={1024}
+          height={1536}
+          priority
+          sizes="(min-width: 640px) 512px, 100vw"
+          className="h-auto w-full"
+        />
       </div>
     </section>
   );
