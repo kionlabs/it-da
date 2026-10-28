@@ -1,18 +1,18 @@
 import type { Config } from "tailwindcss";
 
-// Winter palette: slate, greige, peach beige, and ivory.
-const winter = {
-  50: '#F5F1EE',
-  100: '#EEE7E2',
-  200: '#DAC8BE',
-  300: '#C7B5AC',
-  400: '#A6A9AA',
-  500: '#78848A',
-  600: '#58626C',
-  700: '#414B55',
-  800: '#333E47',
-  900: '#27323B',
-  950: '#1B252D',
+// Muted palette preview: mauve, lavender gray, soft yellow, and ivory.
+const muted = {
+  50: '#F9EEE8',
+  100: '#F3E8EC',
+  200: '#E8D8E2',
+  300: '#D8C0D0',
+  400: '#C6A0B7',
+  500: '#A77B96',
+  600: '#8D617C',
+  700: '#765168',
+  800: '#604254',
+  900: '#493440',
+  950: '#30242C',
 };
 
 const config: Config = {
@@ -24,10 +24,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        purple: winter,
-        violet: winter,
-        indigo: winter,
-        blue: { ...winter, 50: '#F4F6F7', 100: '#E9EDF0', 200: '#D7DFE3' },
+        purple: muted,
+        violet: muted,
+        indigo: muted,
+        blue: { ...muted, 50: '#F5F3F8', 100: '#EDEBF4', 200: '#DCD9E8' },
         periwinkle: {
           mint: '#ADEEE2',
           purple: '#A260EE',

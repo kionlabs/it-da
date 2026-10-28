@@ -5,7 +5,7 @@ const strengths = ['학교별 기출 분석', '1:1 정밀 진단', '맞춤 커�
 
 export default function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#F5F1EE] lg:min-h-[680px]">
+    <section className="relative isolate overflow-hidden bg-[#F9EEE8] lg:min-h-[680px]">
       <div className="absolute inset-y-0 left-[8%] hidden w-[min(42vw,620px)] lg:block">
         <div className="relative h-full w-full">
           <Image
@@ -21,7 +21,7 @@ export default function HeroSection() {
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 hidden lg:block lg:bg-[linear-gradient(270deg,#F5F1EE_0%,#F5F1EE_35%,rgba(245,241,238,0.88)_48%,rgba(245,241,238,0.1)_70%,rgba(245,241,238,0)_100%)]"
+        className="absolute inset-0 hidden lg:block lg:bg-[linear-gradient(270deg,#F9EEE8_0%,#F9EEE8_35%,rgba(249,238,232,0.88)_48%,rgba(249,238,232,0.1)_70%,rgba(249,238,232,0)_100%)]"
       />
 
       <div className="home-hero-inner relative mx-auto flex max-w-7xl items-start px-4 pb-0 pt-10 sm:px-6 sm:pt-14 lg:min-h-[680px] lg:items-center lg:justify-end lg:px-8 lg:py-20">
@@ -50,7 +50,7 @@ export default function HeroSection() {
           <div className="home-hero-actions mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="#lead-form"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#58626C] px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#414B55] focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#765168] px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#604254] focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300"
             >
               무료 시범수업 신청
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

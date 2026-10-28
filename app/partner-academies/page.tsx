@@ -145,7 +145,7 @@ export default function PartnerAcademiesPage() {
       <BreadcrumbJsonLd name="제휴학원 맞춤 학습" path="/partner-academies" />
 
       <main>
-        <section className="relative isolate z-10 overflow-x-clip overflow-y-visible bg-[#F4E7DE] px-4 py-14 sm:px-6 md:py-20 lg:min-h-[700px] lg:px-8 lg:py-12">
+        <section className="relative isolate z-10 overflow-x-clip overflow-y-visible bg-[#FFF3E6] px-4 py-14 sm:px-6 md:py-20 lg:min-h-[700px] lg:px-8 lg:py-12">
           <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:min-h-[604px] lg:grid-cols-[0.98fr_1.02fr] lg:gap-6">
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/80 px-4 py-2 text-xs font-black tracking-[0.14em] text-purple-700 shadow-sm backdrop-blur">
@@ -160,7 +160,7 @@ export default function PartnerAcademiesPage() {
               </p>
               <RegionSearch />
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <a href="#lead-form" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#58626C] px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#414B55] focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300">
+                <a href="#lead-form" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#765168] px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#604254] focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300">
                   제휴학원 상담 신청 <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href="#academy-system" className="inline-flex items-center justify-center rounded-full border border-slate-900/15 bg-white/80 px-7 py-4 text-sm font-extrabold text-slate-800 transition hover:bg-white">
@@ -178,8 +178,8 @@ export default function PartnerAcademiesPage() {
 
             <div className="relative mx-auto aspect-square w-full max-w-[640px]">
               <Image src="/images/brand_intro_coach.png" alt="선생님과 학생들이 함께 소통하며 공부하는 제휴학원 코칭 환경" fill priority sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 92vw" className="object-contain" />
-              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#F4E7DE_0%,transparent_16%,transparent_83%,#F4E7DE_100%)]" />
-              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#F4E7DE_0%,transparent_16%,transparent_82%,#F4E7DE_100%)]" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#FFF3E6_0%,transparent_16%,transparent_83%,#FFF3E6_100%)]" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#FFF3E6_0%,transparent_16%,transparent_82%,#FFF3E6_100%)]" />
             </div>
           </div>
         </section>

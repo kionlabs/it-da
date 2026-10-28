@@ -64,11 +64,11 @@ export default function LanguageProgramsPage() {
 
       <main className="flex-1">
         {/* 2. Hero Section */}
-        <section className="relative isolate overflow-hidden bg-[#E9EDF0] px-4 pt-14 sm:px-6 sm:pt-20 lg:min-h-[640px] lg:px-8 lg:py-12">
+        <section className="relative isolate overflow-hidden bg-[#F1F0F6] px-4 pt-14 sm:px-6 sm:pt-20 lg:min-h-[640px] lg:px-8 lg:py-12">
           <div className="absolute inset-0 hidden lg:block">
             <Image src="/images/language-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover object-center" />
-            <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(90deg,#E9EDF0_0%,#E9EDF0_29%,rgba(233,237,240,0.96)_43%,rgba(233,237,240,0.5)_61%,transparent_79%)]" />
-            <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(0deg,#E9EDF0_0%,transparent_17%,transparent_88%,#E9EDF0_100%)]" />
+            <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(90deg,#F1F0F6_0%,#F1F0F6_29%,rgba(241,240,246,0.96)_43%,rgba(241,240,246,0.5)_61%,transparent_79%)]" />
+            <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(0deg,#F1F0F6_0%,transparent_17%,transparent_88%,#F1F0F6_100%)]" />
           </div>
           <div className="relative mx-auto flex max-w-7xl lg:min-h-[544px] lg:items-center">
             <div className="max-w-2xl lg:w-[55%]">
@@ -89,7 +89,7 @@ export default function LanguageProgramsPage() {
                   </span>
                 ))}
               </div>
-              <a href="#lead-form" onClick={scrollToForm} className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#58626C] px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#414B55] focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300">
+              <a href="#lead-form" onClick={scrollToForm} className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#765168] px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#604254] focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300">
                 언어 프로그램 무료 상담 신청 <ChevronRight className="h-5 w-5" />
               </a>
             </div>
