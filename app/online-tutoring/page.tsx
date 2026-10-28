@@ -94,11 +94,11 @@ export default function OnlineTutoringPage() {
       <BreadcrumbJsonLd name="온라인 1:1 맞춤 과외" path="/online-tutoring" />
 
       <main>
-        <section className="relative isolate z-10 bg-[#dcecff] pt-14 sm:pt-20 xl:min-h-[620px] xl:py-12">
-          <div className="absolute inset-y-0 left-0 hidden w-[60%] max-w-[850px] overflow-hidden xl:block xl:[mask-image:linear-gradient(to_right,#000_0%,#000_88%,transparent_100%)]">
-            <Image src="/images/online.png" alt="" fill priority sizes="(min-width: 1536px) 850px, 60vw" className="object-cover object-left-center" />
+        <section className="relative isolate z-10 bg-[#f7eedd] pt-14 sm:pt-20 xl:min-h-[620px] xl:py-12">
+          <div className="absolute left-[2%] top-1/2 hidden aspect-[682/503] w-[46%] max-w-[710px] -translate-y-1/2 overflow-hidden xl:block [mask-image:linear-gradient(to_right,transparent_0%,#000_8%,#000_72%,transparent_100%)]">
+            <Image src="/images/online.png" alt="" fill priority sizes="(min-width: 1536px) 710px, 46vw" className="object-contain" />
+            <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_bottom,#f7eedd_0%,transparent_15%,transparent_82%,#f7eedd_100%)]" />
           </div>
-          <div aria-hidden="true" className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(220,236,255,0)_0%,rgba(220,236,255,0)_39%,rgba(220,236,255,0.9)_51%,#dcecff_55%,#dcecff_100%)] xl:block" />
           <div className="relative mx-auto flex max-w-7xl justify-end px-4 sm:px-6 xl:min-h-[524px] xl:items-center xl:px-8">
             <div className="w-full xl:max-w-[50%] xl:pl-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-300/70 bg-white/70 px-4 py-2 text-xs font-black tracking-[0.14em] text-blue-700 shadow-sm backdrop-blur">
