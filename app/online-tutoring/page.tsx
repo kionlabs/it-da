@@ -95,7 +95,7 @@ export default function OnlineTutoringPage() {
 
       <main>
         <section className="relative isolate z-10 bg-[#dcecff] pt-14 sm:pt-20 xl:min-h-[620px] xl:py-12">
-          <div className="absolute inset-y-0 left-0 hidden w-[60%] max-w-[850px] overflow-hidden xl:block">
+          <div className="absolute inset-y-0 left-0 hidden w-[60%] max-w-[850px] overflow-hidden xl:block xl:[mask-image:linear-gradient(to_right,#000_0%,#000_88%,transparent_100%)]">
             <Image src="/images/online.png" alt="" fill priority sizes="(min-width: 1536px) 850px, 60vw" className="object-cover object-left-center" />
           </div>
           <div aria-hidden="true" className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(220,236,255,0)_0%,rgba(220,236,255,0)_39%,rgba(220,236,255,0.9)_51%,#dcecff_55%,#dcecff_100%)] xl:block" />
