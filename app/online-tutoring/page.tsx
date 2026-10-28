@@ -94,17 +94,17 @@ export default function OnlineTutoringPage() {
       <BreadcrumbJsonLd name="온라인 1:1 맞춤 과외" path="/online-tutoring" />
 
       <main>
-        <section className="relative isolate z-10 bg-[#dcecff] pt-14 sm:pt-20 lg:min-h-[calc(100svh-4rem)] lg:py-16">
-          <div className="absolute inset-y-0 left-0 hidden w-[62%] overflow-hidden lg:block">
-            <Image src="/images/online.png" alt="" fill priority sizes="62vw" className="scale-[1.04] object-cover object-center" />
+        <section className="relative isolate z-10 bg-[#dcecff] pt-14 sm:pt-20 xl:min-h-[620px] xl:py-12">
+          <div className="absolute inset-y-0 left-0 hidden w-[60%] max-w-[850px] overflow-hidden xl:block">
+            <Image src="/images/online.png" alt="" fill priority sizes="(min-width: 1536px) 850px, 60vw" className="object-cover object-left-center" />
           </div>
-          <div aria-hidden="true" className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(220,236,255,0)_0%,rgba(220,236,255,0.06)_27%,rgba(220,236,255,0.88)_47%,#dcecff_56%,#dcecff_100%)] lg:block" />
-          <div className="relative mx-auto flex max-w-7xl justify-end px-4 sm:px-6 lg:min-h-[calc(100svh-12rem)] lg:items-center lg:px-8">
-            <div className="w-full lg:max-w-[56%] lg:pl-8">
+          <div aria-hidden="true" className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(220,236,255,0)_0%,rgba(220,236,255,0)_39%,rgba(220,236,255,0.9)_51%,#dcecff_55%,#dcecff_100%)] xl:block" />
+          <div className="relative mx-auto flex max-w-7xl justify-end px-4 sm:px-6 xl:min-h-[524px] xl:items-center xl:px-8">
+            <div className="w-full xl:max-w-[50%] xl:pl-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-300/70 bg-white/70 px-4 py-2 text-xs font-black tracking-[0.14em] text-blue-700 shadow-sm backdrop-blur">
                 <Laptop2 className="h-4 w-4" /> ONLINE 1:1 TUTORING
               </div>
-              <h1 className="mt-6 text-balance text-4xl font-black leading-[1.16] tracking-tight text-slate-950 sm:text-5xl lg:text-[clamp(2.15rem,3.25vw,3.5rem)] break-keep">
+              <h1 className="mt-6 text-balance text-4xl font-black leading-[1.16] tracking-tight text-slate-950 sm:text-5xl xl:text-[clamp(2.4rem,3.2vw,3.35rem)] break-keep">
                 장소의 한계를 넘어,
                 <br />
                 <span className="text-blue-700">전문 선생님과 만나는</span>
@@ -125,8 +125,8 @@ export default function OnlineTutoringPage() {
               </div>
             </div>
           </div>
-          <div className="relative mt-10 overflow-hidden lg:hidden">
-            <Image src="/images/online.png" alt="노트북 화상 연결로 전문 선생님과 수업하는 잇다과외 온라인 1:1 맞춤 과외" width={682} height={503} priority sizes="100vw" className="block h-auto w-full" />
+          <div className="relative mx-auto mt-10 max-w-[800px] overflow-hidden xl:hidden">
+            <Image src="/images/online.png" alt="노트북 화상 연결로 전문 선생님과 수업하는 잇다과외 온라인 1:1 맞춤 과외" width={682} height={503} priority sizes="(min-width: 800px) 800px, 100vw" className="block h-auto w-full" />
           </div>
         </section>
 
