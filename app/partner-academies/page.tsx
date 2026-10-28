@@ -24,6 +24,7 @@ import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import RegionSearch from '@/components/RegionSearch';
+import RegionDataAttribution from '@/components/RegionDataAttribution';
 import { regionTutoringPages } from '@/lib/regionTutoring';
 
 const siteUrl = 'https://itda-edu.vercel.app';
@@ -201,7 +202,7 @@ export default function PartnerAcademiesPage() {
           <div className="mx-auto max-w-7xl">
             <p className="text-sm font-black tracking-[0.18em] text-purple-700">LOCAL TUTORING GUIDE</p>
             <h2 id="region-guides-title" className="mt-4 text-balance text-3xl font-black sm:text-4xl break-keep">지역별 과외 안내</h2>
-            <p className="mt-4 max-w-3xl leading-7 text-slate-600 break-keep">지역과 과목을 함께 살펴보고, 학생의 학교 자료와 현재 실력에 맞는 수업 방향을 확인하세요. 방문 가능한 제휴학원은 상담 과정에서 안내합니다.</p>
+            <p className="mt-4 max-w-3xl leading-7 text-slate-600 break-keep">전국 읍·면·동 이름과 과목을 검색해 학생의 학교 자료와 현재 실력에 맞는 수업 방향을 확인하세요. 방문 가능한 제휴학원은 상담 과정에서 안내합니다.</p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {regionTutoringPages.map((page) => <Link key={page.slug} href={page.path} className="group flex min-h-44 flex-col justify-between rounded-3xl border border-purple-100 bg-purple-50/60 p-6 transition hover:-translate-y-1 hover:border-purple-300 hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-200"><span className="flex items-center gap-2 text-sm font-bold text-purple-700"><MapPin className="h-4 w-4" aria-hidden="true" />서울 · {page.region}</span><div className="flex items-end justify-between gap-4"><div><h3 className="text-2xl font-black text-slate-950">{page.title}</h3><p className="mt-2 text-sm text-slate-600">학교별 내신 · 개념 진단 · 오답 관리</p></div><ArrowRight className="h-5 w-5 shrink-0 text-purple-700 transition group-hover:translate-x-1" aria-hidden="true" /></div></Link>)}
             </div>
@@ -381,6 +382,7 @@ export default function PartnerAcademiesPage() {
           </div>
         </section>
 
+        <RegionDataAttribution />
         <LeadForm />
       </main>
 
