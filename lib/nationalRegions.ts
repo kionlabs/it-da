@@ -27,7 +27,10 @@ function compact(value: string) {
 }
 
 function baseDongName(name: string) {
-  return name.replace(/\d+(?=동$)/, '');
+  return name
+    .replace(/\d+(?=동$)/, '')
+    .replace(/동\d+가$/, '동')
+    .replace(/\d+가\d*동$/, '동');
 }
 
 function shortProvince(name: string) {

@@ -11,8 +11,9 @@ const page = regionTutoringPages[0];
 
 export const metadata: Metadata = {
   title: '서초동 수학과외 | 학교별 내신·1:1 맞춤 학습',
+  robots: { index: false, follow: true },
   description: page.description,
-  alternates: { canonical: page.path },
+  alternates: { canonical: '/partner-academies/subjects/math' },
   openGraph: {
     type: 'website',
     locale: 'ko_KR',

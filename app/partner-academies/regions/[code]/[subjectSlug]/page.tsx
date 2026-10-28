@@ -6,8 +6,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import LeadForm from '@/components/LeadForm';
 import RegionDataAttribution from '@/components/RegionDataAttribution';
+import { findAcademySubject } from '@/lib/academySubjects';
 import { findNationalRegion, regionLabel } from '@/lib/nationalRegions';
-import { regionTutoringPages } from '@/lib/regionTutoring';
 import { findTutoringSubject } from '@/lib/tutoringSubjects';
 
 const siteUrl = 'https://itda-edu.vercel.app';
@@ -18,14 +18,13 @@ export function generateMetadata({ params }: Props): Metadata {
   const subject = findTutoringSubject(params.subjectSlug);
   if (!region || !subject) return {};
   const path = `/partner-academies/regions/${region.code}/${subject.slug}`;
-  const featured = regionTutoringPages.find((page) => page.path === path);
-  const title = `${region.name} ${subject.name}과외 | 학교별 내신·1:1 맞춤 학습`;
-  const description = featured?.description ?? `${regionLabel(region)} ${subject.name}과외 안내. 학교 자료와 학생의 현재 수준을 확인해 필요한 학습 순서를 상담합니다.`;
+  const title = `${region.name} ${subject.name} 학원 상담 안내 | 잇다과외`;
+  const description = `${regionLabel(region)}에서 ${subject.name} 학습을 찾는 학생을 위한 상담 안내. 방문 가능한 제휴학원은 상담에서 확인합니다.`;
   return {
     title,
     description,
-    robots: { index: Boolean(featured), follow: true },
-    alternates: { canonical: path },
+    robots: { index: false, follow: true },
+    alternates: { canonical: findAcademySubject(subject.slug) ? `/partner-academies/subjects/${subject.slug}` : path },
     openGraph: { type: 'website', locale: 'ko_KR', siteName: '잇다과외', url: `${siteUrl}${path}`, title, description },
   };
 }
