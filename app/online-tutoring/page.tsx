@@ -94,13 +94,14 @@ export default function OnlineTutoringPage() {
       <BreadcrumbJsonLd name="온라인 1:1 맞춤 과외" path="/online-tutoring" />
 
       <main>
-        <section className="relative isolate z-10 bg-[#F5EFF3] pt-14 sm:pt-20 xl:min-h-[620px] xl:py-12">
-          <div className="absolute left-[2%] top-1/2 hidden aspect-[682/503] w-[46%] max-w-[710px] -translate-y-1/2 overflow-hidden xl:block [mask-image:linear-gradient(to_right,transparent_0%,#000_8%,#000_72%,transparent_100%)]">
-            <Image src="/images/online.png" alt="" fill priority sizes="(min-width: 1536px) 710px, 46vw" className="object-contain" />
-            <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_bottom,#F5EFF3_0%,transparent_15%,transparent_82%,#F5EFF3_100%)]" />
-          </div>
-          <div className="relative mx-auto flex max-w-7xl justify-end px-4 sm:px-6 xl:min-h-[524px] xl:items-center xl:px-8">
-            <div className="w-full xl:max-w-[50%] xl:pl-6">
+        <section className="relative isolate z-10 overflow-x-clip overflow-y-visible bg-[#F5EFF3] px-4 py-14 sm:px-6 md:py-20 lg:min-h-[700px] lg:px-8 lg:py-12">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:min-h-[604px] lg:grid-cols-[1.02fr_0.98fr] lg:gap-6">
+            <div className="relative order-2 mx-auto aspect-[682/503] w-full max-w-[640px] lg:order-1">
+              <Image src="/images/online.png" alt="노트북 화상 연결로 전문 선생님과 수업하는 잇다과외 온라인 1:1 맞춤 과외" fill priority sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 92vw" className="object-contain" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#F5EFF3_0%,transparent_12%,transparent_83%,#F5EFF3_100%)]" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#F5EFF3_0%,transparent_15%,transparent_82%,#F5EFF3_100%)]" />
+            </div>
+            <div className="relative z-10 order-1 w-full lg:order-2">
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-300/70 bg-white/70 px-4 py-2 text-xs font-black tracking-[0.14em] text-blue-700 shadow-sm backdrop-blur">
                 <Laptop2 className="h-4 w-4" /> ONLINE 1:1 TUTORING
               </div>
@@ -124,9 +125,6 @@ export default function OnlineTutoringPage() {
                 </a>
               </div>
             </div>
-          </div>
-          <div className="relative mx-auto mt-8 max-w-[700px] overflow-hidden px-3 sm:px-6 xl:hidden [mask-image:linear-gradient(to_bottom,transparent_0%,#000_14%,#000_84%,transparent_100%)]">
-            <Image src="/images/online.png" alt="노트북 화상 연결로 전문 선생님과 수업하는 잇다과외 온라인 1:1 맞춤 과외" width={682} height={503} priority sizes="(min-width: 800px) 800px, 100vw" className="block h-auto w-full" />
           </div>
         </section>
 
