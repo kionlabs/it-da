@@ -64,14 +64,9 @@ export default function LanguageProgramsPage() {
 
       <main className="flex-1">
         {/* 2. Hero Section */}
-        <section className="relative isolate overflow-hidden bg-[#F1F0F6] px-4 pt-14 sm:px-6 sm:pt-20 lg:min-h-[640px] lg:px-8 lg:py-12">
-          <div className="absolute inset-0 hidden lg:block">
-            <Image src="/images/language-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover object-center" />
-            <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(90deg,#F1F0F6_0%,#F1F0F6_29%,rgba(241,240,246,0.96)_43%,rgba(241,240,246,0.5)_61%,transparent_79%)]" />
-            <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(0deg,#F1F0F6_0%,transparent_17%,transparent_88%,#F1F0F6_100%)]" />
-          </div>
-          <div className="relative mx-auto flex max-w-7xl lg:min-h-[544px] lg:items-center">
-            <div className="max-w-2xl lg:w-[55%]">
+        <section className="relative isolate overflow-x-clip overflow-y-visible bg-[#F1F0F6] px-4 py-14 sm:px-6 md:py-20 lg:min-h-[700px] lg:px-8 lg:py-12">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:min-h-[604px] lg:grid-cols-[0.98fr_1.02fr] lg:gap-6">
+            <div className="relative z-10 w-full">
               <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/80 px-4 py-2 text-xs font-black tracking-[0.14em] text-purple-700 shadow-sm backdrop-blur">
                 <Globe className="h-4 w-4" /> GLOBAL LANGUAGE PROGRAM
               </div>
@@ -93,9 +88,11 @@ export default function LanguageProgramsPage() {
                 언어 프로그램 무료 상담 신청 <ChevronRight className="h-5 w-5" />
               </a>
             </div>
-          </div>
-          <div className="relative mx-auto mt-8 aspect-[16/9] max-w-[700px] overflow-hidden lg:hidden [mask-image:linear-gradient(to_bottom,transparent_0%,#000_15%,#000_83%,transparent_100%)]">
-            <Image src="/images/language-hero.jpg" alt="온라인으로 언어 학습을 하는 학생" fill priority sizes="(min-width: 700px) 700px, 100vw" className="object-cover object-center" />
+            <div className="relative mx-auto aspect-[16/9] w-full max-w-[640px] lg:aspect-square">
+              <Image src="/images/language-hero.jpg" alt="온라인으로 언어 학습을 하는 학생" fill priority sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 92vw" className="object-contain lg:object-cover lg:object-[58%_center]" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#F1F0F6_0%,transparent_13%,transparent_86%,#F1F0F6_100%)]" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#F1F0F6_0%,transparent_13%,transparent_82%,#F1F0F6_100%)]" />
+            </div>
           </div>
         </section>
 
