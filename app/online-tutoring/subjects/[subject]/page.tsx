@@ -117,6 +117,8 @@ export default function SubjectPage({ params }: PageProps) {
           </div>
         </section>
 
+        {subject.slug === 'math' && <section className="bg-[#faf4f0] px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="middle-math-link-title"><div className="mx-auto flex max-w-7xl flex-col gap-5 rounded-3xl border border-[#eadde5] bg-white p-7 sm:p-9 lg:flex-row lg:items-center lg:justify-between"><div><p className="text-sm font-black text-[#765168]">중학생 수학 집중 안내</p><h2 id="middle-math-link-title" className="mt-2 text-2xl font-black break-keep">중1·중2·중3 수학 과외를 찾고 있나요?</h2><p className="mt-3 max-w-2xl leading-7 text-slate-600 break-keep">학년별로 달라지는 학습 지점과 학교 시험 준비 방법을 따로 정리했습니다.</p></div><Link href="/online-tutoring/middle-school-math" className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#765168] px-6 py-4 text-sm font-black text-white">중등 수학 과외 보기 <ArrowRight className="h-4 w-4" /></Link></div></section>}
+
         <section className="px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="other-subjects-title">
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-wrap items-end justify-between gap-4"><h2 id="other-subjects-title" className="text-3xl font-black break-keep">다른 과목도 살펴보세요</h2><Link href="/online-tutoring#subject-catalog" className="font-bold text-blue-700 hover:underline">전체 과목 보기</Link></div>

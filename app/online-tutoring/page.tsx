@@ -32,9 +32,9 @@ import { tutoringSubjects } from '@/lib/tutoringSubjects';
 const siteUrl = 'https://itda-edu.vercel.app';
 
 export const metadata: Metadata = {
-  title: '온라인 1:1 맞춤 과외',
+  title: '온라인 과외 · 화상 과외 | 1:1 맞춤 수업',
   description:
-    '국어·영어·수학·사회·과학·역사·논술·코딩 중 필요한 과목을 찾아보세요. 잇다과외는 정밀 진단과 학교별 맞춤 수업, 오답 관리로 온라인 1:1 과외를 진행합니다.',
+    '잇다과외의 온라인 과외·화상 과외는 학생의 학교 진도와 취약 개념을 확인한 뒤 실시간 1:1 수업과 오답 관리를 연결합니다. 국어·영어·수학 등 과목별 수업을 살펴보세요.',
   keywords: ['잇다과외 온라인 과외', '온라인 1:1 과외', '화상 과외', '초중고 온라인 과외', '학교별 내신 과외'],
   alternates: { canonical: '/online-tutoring' },
   openGraph: {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     url: `${siteUrl}/online-tutoring`,
     siteName: '잇다과외',
-    title: '온라인 1:1 맞춤 과외 | 잇다과외',
+    title: '온라인 과외 · 화상 과외 | 잇다과외',
     description: '장소의 제약 없이 전문 선생님과 연결되는 진단 기반 온라인 1:1 맞춤 과외 서비스입니다.',
     images: [`${siteUrl}/images/online.png`],
   },
@@ -128,6 +128,21 @@ export default function OnlineTutoringPage() {
           </div>
         </section>
 
+        <section className="bg-[#faf7f8] px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="video-lesson-title">
+          <div className="mx-auto max-w-7xl">
+            <p className="text-sm font-black tracking-[0.16em] text-[#765168]">HOW ONLINE LESSONS WORK</p>
+            <h2 id="video-lesson-title" className="mt-3 text-balance text-3xl font-black sm:text-4xl break-keep">화상 과외는 어떻게 진행되나요?</h2>
+            <p className="mt-4 max-w-3xl leading-8 text-slate-600 break-keep">온라인 과외도 학교 수업 자료와 학생의 풀이를 중심으로 진행합니다. 상담에서 목표와 현재 상태를 확인하고, 실시간 수업에서 이해 정도를 살핀 뒤 다음 학습으로 연결합니다.</p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {[
+                { number: '01', title: '수업 전', detail: '학년·과목·학교 진도와 어려운 단원을 확인해 수업의 우선순위를 정합니다.' },
+                { number: '02', title: '실시간 1:1 수업', detail: '선생님이 개념 이해와 풀이 과정을 함께 확인하며 학생의 속도에 맞춰 설명합니다.' },
+                { number: '03', title: '수업 후 점검', detail: '틀린 이유와 남은 질문을 정리하고 다음 수업에서 다시 확인할 내용을 정합니다.' },
+              ].map((item) => <article key={item.number} className="rounded-3xl border border-[#eadde5] bg-white p-7"><span className="text-sm font-black text-[#765168]">{item.number}</span><h3 className="mt-4 text-xl font-black">{item.title}</h3><p className="mt-3 leading-7 text-slate-600 break-keep">{item.detail}</p></article>)}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-white px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="discovery-title">
           <div className="mx-auto max-w-7xl">
             <p className="text-sm font-black tracking-[0.16em] text-purple-700">FIND YOUR TUTORING</p>
@@ -139,6 +154,17 @@ export default function OnlineTutoringPage() {
                 { href: '/online-tutoring/by-school', title: '학교별 과외', detail: '실제 교과서와 시험 자료를 바탕으로 한 학습을 살펴보세요.', example: '수완고 과학 과외' },
               ].map((item) => <Link key={item.href} href={item.href} className="group rounded-3xl border border-purple-200 bg-purple-50/50 p-7 transition hover:-translate-y-1 hover:shadow-lg"><span className="text-xs font-black text-purple-700">{item.example}</span><h3 className="mt-4 text-2xl font-black">{item.title}</h3><p className="mt-3 leading-7 text-slate-600 break-keep">{item.detail}</p><span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-purple-700">찾아보기 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></span></Link>)}
             </div>
+          </div>
+        </section>
+
+        <section className="bg-white px-4 pb-16 sm:px-6 lg:px-8" aria-labelledby="middle-math-title">
+          <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-3xl border border-[#eadde5] bg-[#fbf5f3] p-7 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="text-sm font-black text-[#765168]">중등 수학 학습 가이드</p>
+              <h2 id="middle-math-title" className="mt-3 text-balance text-2xl font-black sm:text-3xl break-keep">중등 수학 과외, 학년보다 먼저 확인할 것</h2>
+              <p className="mt-3 max-w-2xl leading-7 text-slate-600 break-keep">중1의 문자와 식부터 중3의 고등 수학 연결까지, 현재 막히는 개념과 학교 시험 준비 순서를 살펴보세요.</p>
+            </div>
+            <Link href="/online-tutoring/middle-school-math" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#765168] px-6 py-4 text-sm font-black text-white transition hover:bg-[#604254]">중등 수학 과외 살펴보기 <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 

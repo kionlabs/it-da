@@ -19,6 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${siteUrl}/online-tutoring/middle-school-math`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     ...tutoringSubjects.map((subject) => ({
       url: `${siteUrl}/online-tutoring/subjects/${subject.slug}`,
       lastModified: new Date(),
