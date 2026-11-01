@@ -31,6 +31,7 @@ export default function Footer() {
             <nav aria-label="하단 주요 메뉴" className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-bold text-slate-600 lg:justify-end">
               <Link href="/online-tutoring" className="hover:text-purple-700">온라인 1:1 과외</Link>
               <Link href="/partner-academies" className="hover:text-purple-700">제휴학원</Link>
+              <Link href="/online-study-room" className="hover:text-purple-700">온라인 독서실</Link>
               <Link href="/language-programs" className="hover:text-purple-700">언어 프로그램</Link>
               <Link href="/pricing-faq" className="hover:text-purple-700">수업료 &amp; FAQ</Link>
             </nav>

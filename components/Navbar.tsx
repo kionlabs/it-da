@@ -7,6 +7,7 @@ import {
   CircleHelp,
   Globe,
   Handshake,
+  BookOpen,
   Laptop,
   Menu,
   Sparkles,
@@ -30,6 +31,7 @@ export default function Navbar() {
   const navLinks = [
     { name: '온라인 과외', href: '/online-tutoring', icon: Laptop },
     { name: '제휴학원', href: '/partner-academies', icon: Handshake },
+    { name: '온라인 독서실', href: '/online-study-room', icon: BookOpen },
     { name: '언어 프로그램', href: '/language-programs', icon: Globe },
     { name: '수업료&FAQ', href: '/pricing-faq', icon: CircleHelp },
   ];

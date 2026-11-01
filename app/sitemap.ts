@@ -43,6 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${siteUrl}/online-study-room`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     ...academySubjects.map((subject) => ({
       url: `${siteUrl}/partner-academies/subjects/${subject.slug}`,
       lastModified: new Date(),
