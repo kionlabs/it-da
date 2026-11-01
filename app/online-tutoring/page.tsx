@@ -130,6 +130,20 @@ export default function OnlineTutoringPage() {
           </div>
         </section>
 
+        <section className="bg-white px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="discovery-title">
+          <div className="mx-auto max-w-7xl">
+            <p className="text-sm font-black tracking-[0.16em] text-purple-700">FIND YOUR TUTORING</p>
+            <h2 id="discovery-title" className="mt-3 text-3xl font-black sm:text-4xl">우리 아이에게 맞는 기준으로 찾기</h2>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {[
+                { href: '/online-tutoring/by-grade', title: '학년별 과외', detail: '초4부터 고3까지 학습 단계와 과목에 맞춰 살펴보세요.', example: '중2 영어 과외' },
+                { href: '/online-tutoring/by-region', title: '지역별 과외', detail: '전국 읍·면·동을 찾아 온라인 1:1 수업 방향을 확인하세요.', example: '잠원동 수학 과외' },
+                { href: '/online-tutoring/by-school', title: '학교별 과외', detail: '실제 교과서와 시험 자료를 바탕으로 한 학습을 살펴보세요.', example: '수완고 과학 과외' },
+              ].map((item) => <Link key={item.href} href={item.href} className="group rounded-3xl border border-purple-200 bg-purple-50/50 p-7 transition hover:-translate-y-1 hover:shadow-lg"><span className="text-xs font-black text-purple-700">{item.example}</span><h3 className="mt-4 text-2xl font-black">{item.title}</h3><p className="mt-3 leading-7 text-slate-600 break-keep">{item.detail}</p><span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-purple-700">찾아보기 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></span></Link>)}
+            </div>
+          </div>
+        </section>
+
         <section id="subject-catalog" className="scroll-mt-20 bg-white px-4 py-20 sm:px-6 md:py-28 lg:px-8" aria-labelledby="subject-catalog-title">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-3xl text-center">

@@ -33,6 +33,11 @@ export default function Navbar() {
     { name: '언어 프로그램', href: '/language-programs', icon: Globe },
     { name: '수업료&FAQ', href: '/pricing-faq', icon: CircleHelp },
   ];
+  const onlineSubLinks = [
+    { name: '학년별 과외', href: '/online-tutoring/by-grade' },
+    { name: '지역별 과외', href: '/online-tutoring/by-region' },
+    { name: '학교별 과외', href: '/online-tutoring/by-school' },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md transition-all">
@@ -56,6 +61,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-3 xl:gap-5">
           <nav className="flex items-center gap-3 xl:gap-5">
             {navLinks.map((link) => (
+              <div key={link.name} className="group relative">
               <Link
                 key={link.name}
                 href={link.href}
@@ -63,6 +69,8 @@ export default function Navbar() {
               >
                 {link.name}
               </Link>
+              {link.href === '/online-tutoring' && <div className="invisible absolute left-1/2 top-full z-50 w-44 -translate-x-1/2 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"><div className="rounded-2xl border border-purple-100 bg-white p-2 shadow-xl">{onlineSubLinks.map((item) => <Link key={item.href} href={item.href} className="block rounded-xl px-3 py-2.5 text-sm font-bold text-slate-700 hover:bg-purple-50 hover:text-purple-700 focus:bg-purple-50">{item.name}</Link>)}</div></div>}
+              </div>
             ))}
           </nav>
 
@@ -108,8 +116,8 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const Icon = link.icon;
               return (
+                <React.Fragment key={link.name}>
                 <Link
-                  key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-purple-50 hover:text-purple-700 transition-colors"
@@ -117,6 +125,8 @@ export default function Navbar() {
                   <Icon className="h-4 w-4 text-purple-600" />
                   <span>{link.name}</span>
                 </Link>
+                {link.href === '/online-tutoring' && <div className="ml-9 flex flex-col gap-1">{onlineSubLinks.map((item) => <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-purple-50 hover:text-purple-700">{item.name}</Link>)}</div>}
+                </React.Fragment>
               );
             })}
             <div className="pt-2 border-t border-slate-100">

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { tutoringSubjects } from '@/lib/tutoringSubjects';
 import { academySubjects } from '@/lib/academySubjects';
+import { featuredGuides } from '@/lib/onlineDiscovery';
 
 const siteUrl = 'https://itda-edu.vercel.app';
 
@@ -20,6 +21,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...tutoringSubjects.map((subject) => ({
       url: `${siteUrl}/online-tutoring/subjects/${subject.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+    ...['by-grade', 'by-region', 'by-school'].map((section) => ({
+      url: `${siteUrl}/online-tutoring/${section}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+    ...Object.values(featuredGuides).map((path) => ({
+      url: `${siteUrl}${path}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
