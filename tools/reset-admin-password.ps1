@@ -11,9 +11,9 @@ $userIds = @{
     'kionlabs@gmail.com' = '7abb8054-7f43-445d-8a6f-18a4bdd56b0f'
 }
 
-$secret = Read-Host 'Supabase service_role key (입력 내용 숨김)' -AsSecureString
-$password = Read-Host '새 관리자 비밀번호 (입력 내용 숨김)' -AsSecureString
-$confirmation = Read-Host '새 비밀번호 확인 (입력 내용 숨김)' -AsSecureString
+$secret = Read-Host 'Supabase service_role key (hidden)' -AsSecureString
+$password = Read-Host 'New admin password (hidden)' -AsSecureString
+$confirmation = Read-Host 'Confirm new password (hidden)' -AsSecureString
 
 $secretText = [System.Net.NetworkCredential]::new('', $secret).Password
 $passwordText = [System.Net.NetworkCredential]::new('', $password).Password
@@ -21,13 +21,13 @@ $confirmationText = [System.Net.NetworkCredential]::new('', $confirmation).Passw
 
 try {
     if (-not $secretText.StartsWith('eyJ')) {
-        throw 'Supabase 프로젝트의 legacy service_role JWT 키를 입력해 주세요.'
+        throw 'Enter the legacy service_role JWT key from your Supabase project.'
     }
-    if ($passwordText.Length -lt 12) {
-        throw '새 비밀번호는 12자 이상으로 설정해 주세요.'
+    if ($passwordText.Length -lt 8) {
+        throw 'The new password must be at least 8 characters.'
     }
     if ($passwordText -cne $confirmationText) {
-        throw '새 비밀번호와 확인 입력이 다릅니다.'
+        throw 'The passwords do not match.'
     }
 
     $uri = "https://iokhvcxbgmdxntlbnopk.supabase.co/auth/v1/admin/users/$($userIds[$Email])"
@@ -35,9 +35,9 @@ try {
     Invoke-RestMethod -Uri $uri -Method Put -Headers @{
         apikey = $secretText
         Authorization = "Bearer $secretText"
-    } -ContentType 'application/json' -Body $body | Out-Null
+    } -ContentType 'application/json; charset=utf-8' -Body ([System.Text.Encoding]::UTF8.GetBytes($body)) | Out-Null
 
-    Write-Host "$Email 계정의 비밀번호가 변경됐습니다. /admin에서 로그인해 주세요."
+    Write-Host "Password updated for $Email. Sign in at https://itda-edu.vercel.app/admin"
 }
 finally {
     $secretText = $null
