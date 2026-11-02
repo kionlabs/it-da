@@ -20,7 +20,13 @@ export async function POST(request: Request) {
       body: JSON.stringify({ email, password }),
       cache: 'no-store',
     });
-    if (!auth.ok) return NextResponse.json({ message: '로그인 정보를 확인해 주세요.' }, { status: 401 });
+    if (!auth.ok) {
+      const failure = await auth.json().catch(() => ({}));
+      const message = failure.error_code === 'email_not_confirmed'
+        ? '이메일 인증을 완료한 뒤 다시 로그인해 주세요.'
+        : '이메일 또는 비밀번호가 올바르지 않습니다. 신규 계정은 이메일 인증 여부도 확인해 주세요.';
+      return NextResponse.json({ message }, { status: 401 });
+    }
     const session = await auth.json();
     if (!session.access_token || !session.refresh_token || !(await isAdminToken(session.access_token))) {
       return NextResponse.json({ message: '관리자 권한이 없습니다.' }, { status: 403 });

@@ -31,10 +31,19 @@ const filters: { value: StatusFilter; label: string }[] = [
 ];
 
 async function api(path: string, init?: RequestInit) {
-  const response = await fetch(path, { ...init, cache: 'no-store' });
-  const data = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(data.message || '요청을 처리하지 못했습니다.');
-  return data;
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 15000);
+  try {
+    const response = await fetch(path, { ...init, cache: 'no-store', signal: controller.signal });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.message || '요청을 처리하지 못했습니다.');
+    return data;
+  } catch (reason) {
+    if (controller.signal.aborted) throw new Error('응답이 지연되고 있습니다. 잠시 후 다시 시도해 주세요.');
+    throw reason;
+  } finally {
+    window.clearTimeout(timeout);
+  }
 }
 
 export default function AdminDashboard() {
@@ -130,7 +139,24 @@ export default function AdminDashboard() {
       </header>
 
       {authenticated === null && <p className="py-16 text-center text-slate-600">로그인 상태를 확인하고 있습니다.</p>}
-      {authenticated === false && <section className="mx-auto mt-14 max-w-md rounded-3xl border border-[#e8dce2] bg-white p-7 shadow-sm sm:p-9"><h2 className="text-2xl font-black">관리자 로그인</h2><p className="mt-2 text-sm leading-6 text-slate-600">승인된 Supabase Auth 계정만 신청 내역을 볼 수 있습니다.</p><form onSubmit={login} className="mt-7 space-y-5"><label className="block text-sm font-bold">이메일<input type="email" required autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-[#765168]" /></label><label className="block text-sm font-bold">비밀번호<input type="password" required autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-[#765168]" /></label><button disabled={busy} className="w-full rounded-xl bg-[#765168] px-5 py-3.5 font-bold text-white disabled:opacity-50">{busy ? '확인 중…' : '로그인'}</button></form></section>}
+      {authenticated === false && (
+        <section className="mx-auto mt-14 max-w-md rounded-3xl border border-[#e8dce2] bg-white p-7 shadow-sm sm:p-9">
+          <h2 className="text-2xl font-black">관리자 로그인</h2>
+          <p className="mt-2 text-sm leading-6 text-slate-600">승인된 Supabase Auth 계정만 신청 내역을 볼 수 있습니다.</p>
+          <form onSubmit={login} className="mt-7 space-y-5">
+            <label className="block text-sm font-bold">
+              이메일
+              <input type="email" required autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-[#765168]" />
+            </label>
+            <label className="block text-sm font-bold">
+              비밀번호
+              <input type="password" required autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-[#765168]" />
+            </label>
+            {error && <p role="alert" className="rounded-xl bg-red-50 p-3 text-sm font-semibold leading-6 text-red-700">{error}</p>}
+            <button type="submit" disabled={busy} className="w-full rounded-xl bg-[#765168] px-5 py-3.5 font-bold text-white disabled:opacity-50">{busy ? '확인 중…' : '로그인'}</button>
+          </form>
+        </section>
+      )}
 
       {authenticated && <section className="py-8">
         <div className="flex flex-wrap items-end justify-between gap-3"><div><h2 className="text-2xl font-black">상담 신청 목록</h2><p className="mt-1 text-sm text-slate-600">현재 조건에 맞는 신청 {total.toLocaleString()}건</p></div><button type="button" onClick={() => void load()} disabled={busy} className="rounded-full border border-[#dfcbd5] bg-white px-5 py-2.5 text-sm font-bold disabled:opacity-50">새로고침</button></div>
