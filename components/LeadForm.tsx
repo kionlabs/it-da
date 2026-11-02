@@ -174,12 +174,8 @@ export default function LeadForm({ initialSubject, initialAddress, initialSchool
               </h3>
               <p className="text-slate-600 text-sm sm:text-base max-w-md mx-auto leading-relaxed mb-6 break-keep">
                 <span className="text-purple-700 font-bold">{formData.name}</span> 학부모님/학생의 소중한 정보가 접수되었습니다.<br />
-                AI 분석 시스템이 최적의 코치 후보를 정리하여 빠르게 안내해 드리겠습니다.
+                상담 내용을 확인한 뒤 안내해 드리겠습니다.
               </p>
-              <div className="inline-flex items-center gap-2 rounded-xl bg-emerald-100 border border-emerald-300 px-4 py-2.5 text-xs text-emerald-800 font-semibold">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                <span>접수 번호: #{Math.floor(100000 + Math.random() * 900000)}</span>
-              </div>
             </div>
           ) : (
             /* Main Input Form */
