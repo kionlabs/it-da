@@ -86,7 +86,7 @@ export default function OnlineStudyRoomPage() {
                   <dt className="font-bold">평일</dt><dd>20:00 ~ 24:00</dd>
                   <dt className="font-bold">주말</dt><dd>10:00 ~ 12:00, 14:00 ~ 18:00</dd>
                 </dl>
-                <p className="mt-2 text-xs text-slate-500">이용료는 확인 후 안내해 드립니다.</p>
+                <p className="mt-2 text-xs font-semibold text-[#765168]">수업을 시작하면 온라인 독서실을 무료로 이용할 수 있습니다.</p>
               </div>
             </div>
             <div className="relative mx-auto w-full max-w-[640px]">
@@ -180,7 +180,7 @@ export default function OnlineStudyRoomPage() {
         <section className="border-t border-slate-100 px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl"><h2 className="text-2xl font-black">이용 전 자주 묻는 질문</h2><div className="mt-7 grid gap-4 md:grid-cols-2">
             <details className="group rounded-2xl border border-[#E5D9E2] bg-white p-6"><summary className="cursor-pointer font-bold text-slate-900">온라인 과외 수업과 어떻게 연결되나요?</summary><p className="mt-4 leading-7 text-slate-600">수업에서 정한 복습·문제풀이 목표를 자율학습 시간에 실행하고, 학습 기록을 다음 수업 계획에 참고합니다.</p></details>
-            <details className="group rounded-2xl border border-[#E5D9E2] bg-white p-6"><summary className="cursor-pointer font-bold text-slate-900">운영시간과 이용료는 어떻게 확인하나요?</summary><p className="mt-4 leading-7 text-slate-600">평일은 20:00 ~ 24:00, 주말은 10:00 ~ 12:00와 14:00 ~ 18:00에 운영합니다. 이용료는 확인 후 안내해 드립니다.</p></details>
+            <details className="group rounded-2xl border border-[#E5D9E2] bg-white p-6"><summary className="cursor-pointer font-bold text-slate-900">운영시간과 이용 대상은 어떻게 되나요?</summary><p className="mt-4 leading-7 text-slate-600">평일은 20:00 ~ 24:00, 주말은 10:00 ~ 12:00와 14:00 ~ 18:00에 운영합니다. 수업을 시작하면 온라인 독서실을 무료로 이용할 수 있습니다.</p></details>
           </div></div>
         </section>
         <LeadForm />

@@ -6,8 +6,8 @@ const strengths = ['학교별 기출 분석', '1:1 정밀 진단', '맞춤 커�
 export default function HeroSection() {
   return (
     <section className="relative isolate overflow-hidden bg-[#F9EEE8] lg:min-h-[680px]">
-      <div className="absolute inset-y-0 left-[8%] hidden w-[min(42vw,620px)] lg:block">
-        <div className="relative h-full w-full">
+      <div className="absolute inset-0 mx-auto hidden w-full max-w-7xl lg:block">
+        <div className="relative h-full w-[48%] max-w-[620px]">
           <Image
             src="/images/hero-student.png"
             alt=""
