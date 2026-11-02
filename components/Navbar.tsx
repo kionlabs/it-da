@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import {
   ChevronRight,
   CircleHelp,
@@ -15,7 +16,30 @@ import {
 } from 'lucide-react';
 
 export default function Navbar() {
+  const router = useRouter();
+  const logoClickTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => () => {
+    if (logoClickTimer.current) clearTimeout(logoClickTimer.current);
+  }, []);
+
+  const handleLogoClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (event.detail === 0 || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+
+    if (logoClickTimer.current) {
+      clearTimeout(logoClickTimer.current);
+      logoClickTimer.current = null;
+      router.push('/admin');
+      return;
+    }
+
+    logoClickTimer.current = setTimeout(() => {
+      logoClickTimer.current = null;
+      router.push('/');
+    }, 350);
+  };
 
   const scrollToForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -45,7 +69,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md transition-all">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Left: Brand Logo (Link to Home) */}
-        <Link href="/" className="flex items-center gap-2.5 group">
+        <Link href="/" onClick={handleLogoClick} className="flex touch-manipulation items-center gap-2.5 group">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-500/20 group-hover:scale-105 transition-transform">
             <Sparkles className="h-5 w-5 text-white" />
           </div>
