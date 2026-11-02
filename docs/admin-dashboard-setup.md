@@ -5,12 +5,13 @@
 ## Supabase에서 한 번만 설정
 
 1. 이 프로젝트와 연결된 Supabase 프로젝트의 **SQL Editor**에서 [`20261102000000_itda_admin_access.sql`](../supabase/migrations/20261102000000_itda_admin_access.sql)을 실행합니다. 기존 신청 테이블은 유지됩니다.
-2. **Authentication → Users**에서 `educo1111@naver.com` 계정이 있는지 확인하고 이메일 인증을 완료합니다. Supabase 대시보드 로그인 계정과 프로젝트의 Auth 사용자는 별개입니다.
-3. SQL Editor에서 아래 SQL을 실행합니다. 한 행이 반환되어야 합니다. 인증할 다른 관리자도 필요한 경우 이메일을 바꾸어 같은 절차로 등록합니다.
+2. **Authentication → Users**에서 `educo1111@naver.com` 계정이 있는지 확인하고 이메일 인증을 완료합니다. `kionlabs@gmail.com`도 관리자 화면을 사용할 경우 이 계정이 프로젝트의 Auth 사용자 목록에 있어야 합니다. Supabase 대시보드 로그인 계정과 프로젝트의 Auth 사용자는 별개입니다.
+3. SQL Editor에서 아래 SQL을 실행합니다. 등록된 계정의 사용자 ID가 반환되어야 합니다.
 
 ```sql
 insert into itda.admin_users (user_id)
-select id from auth.users where lower(email) = lower('educo1111@naver.com')
+select id from auth.users
+where lower(email) in ('educo1111@naver.com', 'kionlabs@gmail.com')
 on conflict (user_id) do nothing
 returning user_id;
 ```
@@ -21,7 +22,7 @@ returning user_id;
 select u.email, a.created_at
 from itda.admin_users a
 join auth.users u on u.id = a.user_id
-where lower(u.email) = lower('educo1111@naver.com');
+where lower(u.email) in ('educo1111@naver.com', 'kionlabs@gmail.com');
 ```
 
 관리자 권한을 회수할 때는 해당 사용자 ID의 `itda.admin_users` 행만 삭제합니다. Auth 계정 자체를 삭제할 필요는 없습니다.
