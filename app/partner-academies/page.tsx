@@ -23,6 +23,7 @@ import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import AcademyDirectory from '@/components/AcademyDirectory';
+import RegionSearch from '@/components/RegionSearch';
 import RegionDataAttribution from '@/components/RegionDataAttribution';
 import { academySubjects } from '@/lib/academySubjects';
 import { getAcademyLocations } from '@/lib/academyLocations';
@@ -149,14 +150,53 @@ export default async function PartnerAcademiesPage() {
       <BreadcrumbJsonLd name="제휴학원 맞춤 학습" path="/partner-academies" />
 
       <main>
-        <section className="bg-[#FFF3E6] px-4 py-14 sm:px-6 md:py-16 lg:px-8">
+        <section className="relative isolate z-10 overflow-x-clip overflow-y-visible bg-[#FFF3E6] px-4 py-14 sm:px-6 md:py-20 lg:min-h-[700px] lg:px-8 lg:py-12">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:min-h-[604px] lg:grid-cols-[0.98fr_1.02fr] lg:gap-6">
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/80 px-4 py-2 text-xs font-black tracking-[0.14em] text-purple-700 shadow-sm backdrop-blur">
+                <Handshake className="h-4 w-4" /> IT-DA PARTNER ACADEMY
+              </div>
+              <h1 className="mt-6 max-w-2xl text-balance text-3xl font-black leading-[1.18] tracking-tight sm:text-5xl lg:text-[3.5rem] break-keep">
+                지역 내 <span className="whitespace-nowrap text-purple-700">학교 내신</span>
+                <br className="hidden sm:block" /> 맞춤형 준비
+              </h1>
+              <p className="mt-6 max-w-2xl text-pretty text-base font-medium leading-8 text-slate-700 sm:text-lg break-keep">
+                지역 내 학교 내신 맞춤형 학원의 강점은 ‘일반적인 공부’가 아니라 ‘우리 학교 시험에 맞는 공부’를 시킨다는 점입니다.
+              </p>
+              <RegionSearch />
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <a href="#lead-form" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#765168] px-7 py-4 text-sm font-extrabold text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-[#604254] focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300">
+                  제휴학원 상담 신청 <ArrowRight className="h-4 w-4" />
+                </a>
+                <a href="#academy-system" className="inline-flex items-center justify-center rounded-full border border-slate-900/15 bg-white/80 px-7 py-4 text-sm font-extrabold text-slate-800 transition hover:bg-white">
+                  학습 시스템 보기
+                </a>
+              </div>
+              <div className="mt-7 flex flex-wrap gap-3">
+                {['학교별 내신', '개별 진도', '학습 습관', '밀착 피드백'].map((item) => (
+                  <span key={item} className="rounded-full border border-purple-200 bg-white/75 px-4 py-2 text-xs font-bold text-slate-700 shadow-sm">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative mx-auto aspect-square w-full max-w-[640px]">
+              <Image src="/images/brand_intro_coach.png" alt="선생님과 학생들이 함께 소통하며 공부하는 제휴학원 코칭 환경" fill priority sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 92vw" className="object-contain" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#FFF3E6_0%,transparent_16%,transparent_83%,#FFF3E6_100%)]" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#FFF3E6_0%,transparent_16%,transparent_82%,#FFF3E6_100%)]" />
+            </div>
+          </div>
+        </section>
+
+        <section id="academy-map" className="scroll-mt-16 bg-[#FFF3E6] px-4 pb-16 pt-8 sm:px-6 md:pb-20 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/80 px-4 py-2 text-xs font-black tracking-[0.14em] text-purple-700 shadow-sm">
               <Handshake className="h-4 w-4" /> IT-DA ACADEMY MAP
             </div>
             <div className="mt-5 flex flex-wrap items-end justify-between gap-5">
               <div>
-                <h1 className="text-balance text-3xl font-black leading-tight text-slate-950 sm:text-5xl">전국 학원 위치를 <span className="text-purple-700">지도로 확인하세요</span></h1>
+                <h2 className="text-balance text-3xl font-black leading-tight text-slate-950 sm:text-5xl">전국 학원 위치를 <span className="text-purple-700">지도로 확인하세요</span></h2>
                 <p className="mt-4 max-w-3xl text-base leading-7 text-slate-700 sm:text-lg">본사 공개 학원 목록을 지도와 주소로 살펴보세요. 잇다과외 수업 가능 여부는 상담에서 안내해 드립니다.</p>
               </div>
               <a href="#lead-form" className="inline-flex items-center gap-2 rounded-full bg-[#765168] px-6 py-3.5 text-sm font-extrabold text-white shadow-lg transition hover:bg-[#604254]">30분 무료수업 신청 <ArrowRight className="h-4 w-4" /></a>

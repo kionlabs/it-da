@@ -36,8 +36,8 @@ export default function AcademyDirectory({ locations }: Props) {
       if (cancelled || !mapElement.current) return;
 
       leaflet.current = L;
-      currentMap = L.map(mapElement.current, { scrollWheelZoom: false, zoomControl: true })
-        .setView([36.35, 127.8], 7);
+      currentMap = L.map(mapElement.current, { scrollWheelZoom: false, zoomControl: true, zoomSnap: 0.5 })
+        .setView([36.4, 127.8], 8.5);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -66,7 +66,7 @@ export default function AcademyDirectory({ locations }: Props) {
     const draw = () => {
       group.clearLayers();
       const zoom = currentMap.getZoom();
-      if (zoom <= 8 && plotted.length > 20) {
+      if (zoom <= 9 && plotted.length > 20) {
         const regions = new Map<string, AcademyLocation[]>();
         for (const location of plotted) {
           const list = regions.get(location.region_sido) ?? [];
@@ -95,11 +95,11 @@ export default function AcademyDirectory({ locations }: Props) {
 
     draw();
     currentMap.on('zoomend', draw);
-    if (plotted.length > 0) {
+    if (query.trim() && plotted.length > 0) {
       currentMap.fitBounds(L.latLngBounds(plotted.map((location) => [Number(location.latitude), Number(location.longitude)] as [number, number])), { padding: [35, 35], maxZoom: 12 });
     }
     return () => { currentMap.off('zoomend', draw); group.clearLayers(); };
-  }, [filtered, mapReady]);
+  }, [filtered, mapReady, query]);
 
   const selectLocation = (location: AcademyLocation) => {
     setSelectedId(location.source_id);

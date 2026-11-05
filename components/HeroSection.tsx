@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import TypingOffer from '@/components/TypingOffer';
 
 const strengths = ['학교별 기출 분석', '1:1 정밀 진단', '맞춤 커리큘럼', '밀착 피드백'];
 
@@ -63,9 +64,7 @@ export default function HeroSection() {
             </a>
           </div>
 
-          <p className="home-hero-offer mt-5 text-center text-lg font-black tracking-tight text-[#765168] sm:text-left sm:text-xl">
-            선착순 특별 혜택 무료 30분 수업
-          </p>
+          <TypingOffer />
 
           <div className="home-hero-strengths mt-7 hidden flex-wrap gap-2 sm:flex">
             {strengths.map((strength) => (
