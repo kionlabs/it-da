@@ -37,7 +37,7 @@ export default function AcademyDirectory({ locations }: Props) {
 
       leaflet.current = L;
       currentMap = L.map(mapElement.current, { scrollWheelZoom: false, zoomControl: true, zoomSnap: 0.5 })
-        .setView([36.4, 127.8], 8.5);
+        .setView([36.2, 127.65], 7.5);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -116,7 +116,6 @@ export default function AcademyDirectory({ locations }: Props) {
           <input id="academy-search" value={query} onChange={(event) => { setQuery(event.target.value); setSelectedId(null); }}
             type="search" placeholder="예: 강남구, 고잔점, 광덕대로" className="h-12 w-full bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400 sm:text-base" />
         </div>
-        <p className="mt-2 text-xs text-slate-500">공개 목록 {locations.length}곳 · 검색 결과 {filtered.length}곳</p>
       </div>
 
       <div className="grid lg:grid-cols-[minmax(0,1.5fr)_minmax(320px,1fr)]">
@@ -147,9 +146,6 @@ export default function AcademyDirectory({ locations }: Props) {
           </div>
         </div>
       </div>
-      <p className="border-t border-slate-100 px-4 py-3 text-xs leading-5 text-slate-500 sm:px-6">
-        출처: <a href="https://myoungmoon.com/academy" target="_blank" rel="noopener noreferrer" className="underline">명문과외 공개 동네학원 목록</a> (2026.11.05 확인). 실제 잇다과외 제휴 및 수업 가능 여부는 상담에서 확인해 주세요.
-      </p>
     </div>
   );
 }
