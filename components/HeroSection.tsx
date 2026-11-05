@@ -63,7 +63,11 @@ export default function HeroSection() {
             </a>
           </div>
 
-          <div className="home-hero-strengths mt-8 hidden flex-wrap gap-2 sm:flex">
+          <p className="home-hero-offer mt-5 text-center text-lg font-black tracking-tight text-[#765168] sm:text-left sm:text-xl">
+            선착순 특별 혜택 무료 30분 수업
+          </p>
+
+          <div className="home-hero-strengths mt-7 hidden flex-wrap gap-2 sm:flex">
             {strengths.map((strength) => (
               <span
                 key={strength}

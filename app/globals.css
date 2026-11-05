@@ -49,10 +49,18 @@
     line-height: 1.5;
   }
 
-  .home-hero-actions,
-  .home-hero-strengths {
+  .home-hero-actions {
     margin-top: 1.25rem;
   }
+}
+
+@keyframes home-hero-offer-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.48; }
+}
+
+.home-hero-offer {
+  animation: home-hero-offer-blink 2.4s ease-in-out infinite;
 }
 
 @keyframes success-story-scroll {
@@ -80,6 +88,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .home-hero-offer {
+    animation: none;
+  }
+
   .success-story-viewport {
     overflow-x: auto;
     -webkit-mask-image: none;
