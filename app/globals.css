@@ -63,6 +63,50 @@
   animation: home-hero-offer-blink 2.4s ease-in-out infinite;
 }
 
+@keyframes navbar-trial-blink {
+  0%, 100% { opacity: 1; box-shadow: 0 4px 14px rgba(118, 81, 104, 0.25); }
+  50% { opacity: 0.7; box-shadow: 0 4px 20px rgba(118, 81, 104, 0.48); }
+}
+
+.navbar-trial-cta {
+  animation: navbar-trial-blink 2.2s ease-in-out infinite;
+}
+
+.navbar-trial-cta:hover,
+.navbar-trial-cta:focus-visible {
+  animation-play-state: paused;
+  opacity: 1;
+}
+
+.academy-map-pin {
+  position: relative;
+  border: 0;
+  background: transparent;
+}
+
+.academy-map-pin span {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border: 3px solid white;
+  border-radius: 50% 50% 50% 0;
+  background: #765168;
+  box-shadow: 0 2px 7px rgba(32, 33, 43, 0.4);
+  transform: rotate(-45deg);
+}
+
+.academy-map-cluster {
+  display: grid;
+  place-items: center;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: #765168;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(32, 33, 43, 0.35);
+}
+
 @keyframes success-story-scroll {
   from {
     transform: translateX(0);
@@ -88,6 +132,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .navbar-trial-cta {
+    animation: none;
+  }
+
   .home-hero-offer {
     animation: none;
   }

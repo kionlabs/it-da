@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import KakaoChannelButton from "@/components/KakaoChannelButton";
+import "leaflet/dist/leaflet.css";
 import "./globals.css";
 
 const siteUrl = "https://itda-edu.vercel.app";

@@ -103,9 +103,9 @@ export default function Navbar() {
           <a
             href="#lead-form"
             onClick={scrollToForm}
-            className="group relative inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-md shadow-purple-500/20 transition-all hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 xl:px-4 xl:text-sm"
+            className="navbar-trial-cta group relative inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-md shadow-purple-500/20 transition-all hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 xl:px-4 xl:text-sm"
           >
-            <span>무료 상담 신청</span>
+            <span>30분 무료수업 신청</span>
             <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 text-white/90" />
           </a>
         </div>
@@ -115,9 +115,11 @@ export default function Navbar() {
           <a
             href="#lead-form"
             onClick={scrollToForm}
-            className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm"
+            aria-label="30분 무료수업 신청"
+            className="navbar-trial-cta inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm"
           >
-            <span>무료 상담</span>
+            <span className="sm:hidden">무료수업</span>
+            <span className="hidden sm:inline">30분 무료수업 신청</span>
             <ChevronRight className="h-3.5 w-3.5" />
           </a>
           <button
@@ -161,7 +163,7 @@ export default function Navbar() {
                 onClick={scrollToForm}
                 className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 py-2.5 text-sm font-semibold text-white shadow-md shadow-purple-500/20"
               >
-                <span>무료 상담 신청하기</span>
+                <span>30분 무료수업 신청</span>
                 <ChevronRight className="h-4 w-4" />
               </a>
             </div>
