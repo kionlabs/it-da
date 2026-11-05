@@ -96,7 +96,12 @@ export default function AcademyDirectory({ locations }: Props) {
     draw();
     currentMap.on('zoomend', draw);
     if (query.trim() && plotted.length > 0) {
-      currentMap.fitBounds(L.latLngBounds(plotted.map((location) => [Number(location.latitude), Number(location.longitude)] as [number, number])), { padding: [35, 35], maxZoom: 12 });
+      if (plotted.length === 1) {
+        const location = plotted[0];
+        currentMap.flyTo([Number(location.latitude), Number(location.longitude)], 17, { duration: 0.6 });
+      } else {
+        currentMap.fitBounds(L.latLngBounds(plotted.map((location) => [Number(location.latitude), Number(location.longitude)] as [number, number])), { padding: [35, 35], maxZoom: 14 });
+      }
     }
     return () => { currentMap.off('zoomend', draw); group.clearLayers(); };
   }, [filtered, mapReady, query]);
@@ -104,7 +109,7 @@ export default function AcademyDirectory({ locations }: Props) {
   const selectLocation = (location: AcademyLocation) => {
     setSelectedId(location.source_id);
     if (location.latitude === null || location.longitude === null || !map.current) return;
-    map.current.flyTo([location.latitude, location.longitude], 14, { duration: 0.6 });
+    map.current.flyTo([location.latitude, location.longitude], 17, { duration: 0.6 });
   };
 
   return (
