@@ -97,7 +97,7 @@ export default function OnlineTutoringPage() {
         <section className="relative isolate z-10 overflow-x-clip overflow-y-visible bg-[#F5EFF3] px-4 py-14 sm:px-6 md:py-20 lg:min-h-[700px] lg:px-8 lg:py-12">
           <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:min-h-[604px] lg:grid-cols-[1.02fr_0.98fr] lg:gap-6">
             <div className="relative order-2 mx-auto aspect-[682/503] w-full max-w-[640px] lg:order-1">
-              <Image src="/images/online.png" alt="노트북 화상 연결로 전문 선생님과 수업하는 잇다과외 온라인 1:1 맞춤 과외" fill priority sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 92vw" className="object-contain" />
+              <Image src="/images/online-tutoring-hero.png" alt="노트에 풀이를 적으며 노트북 화면의 선생님과 온라인 1:1 수업을 하는 학생의 연출 이미지" fill priority sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 92vw" className="object-cover object-center" />
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#F5EFF3_0%,transparent_12%,transparent_83%,#F5EFF3_100%)]" />
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#F5EFF3_0%,transparent_15%,transparent_82%,#F5EFF3_100%)]" />
             </div>
